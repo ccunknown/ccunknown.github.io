@@ -50,6 +50,8 @@ export default class Page1 {
         }
       });
 
+      this.preset();
+
       resolve();
     });
   }
