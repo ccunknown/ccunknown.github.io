@@ -1,0 +1,217 @@
+body {
+    background-color: royalblue;
+}
+
+.form-element {
+    width: calc(100% - 20px);
+}
+
+.form-control {
+    color: grey;
+    align-content: center;
+    font-family: myFont;
+    font-size: 24px;
+    width: 100%;
+}
+
+.container {
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.my-container-page1 {
+    background-color: cornflowerblue;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    border-radius: 25px;
+    padding-left: 40px;
+    padding-right: 25px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.image-page1 {
+    text-align: center;
+    display: flex;
+    width: 9cm;
+    height: 4cm;
+    margin-top: 1cm;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    padding-left: 1cm;
+    padding-right: 1cm;
+}
+
+.header-page1 {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-family: myFont;
+    font-weight: bold;
+    color: white;
+}
+
+.textfield-name-page1 {
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.textfield-age-page1 {
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.combobox-sex-page1 {
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.textfield-height-page1 {
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.textfield-clothweight-page1 {
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.combobox-bodytype-page1 {
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.textfield-id-page1 {
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.button-page1 {
+    align-self: center;
+    background-color: midnightblue;
+    color: white;
+    display: flex;
+    padding-left: 4cm;
+    padding-right: 4cm;
+    padding-top: 0.1cm;
+    padding-bottom: 0.1cm;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0.5cm;
+    margin-bottom: auto;
+    font-family: myFont;
+    font-weight: bold;
+    font-size: 30px;
+    border: none;
+    border-radius: 30px;
+}
+
+button:hover {
+    outline:none;
+    box-shadow: none;
+    background-color: rgb(0,0,158);
+} 
+
+*:focus {
+    outline: 0 !important;
+}
+
+.checkbox-page1 {
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    font-family: myFont;
+    font-size: 25px;
+}
+
+@font-face {
+    font-family: myFont;
+    src: url(assets/fonts/THSarabun_Bold.ttf);
+    font-weight: bold;
+}
+
+/*desktop size*/
+
+@media only screen and (min-width: 414px) {
+    /* For desktop: */
+    .form-element {
+        margin-bottom: 24px;
+        width: calc(100% - 20px);
+    }
+    .my-container-page1 {
+        width: 12cm;
+    }
+    .header-page1 {
+        font-size: 30px
+    }
+    .form-control {
+        height: 44px;
+    }
+}
+
+/*Mobiile size*/
+
+@media only screen and (max-width: 1280px) {
+    .image-page1 {
+        width: 5.2cm;
+        height: 2.2cm;
+    }
+    .my-container-page1 {
+        width: 280px;
+    }
+    .header-page1 {
+        font-size: 30px
+    }
+    .form-control {
+        height: 30px;
+        font-size: 18px;
+        border-radius: 3px;
+        border: none;
+        width: 100%;
+    }
+    .form-element {
+        width: calc(100% - 15px);
+    }
+    .combobox-sex-page1 {
+        margin: 0px;
+        width: 100% + 10px;
+    }
+    .button-page1 {
+        padding-left: 2cm;
+        padding-right: 2cm;
+        font-size: 25px;
+    }
+    .checkbox-page1 {
+        font-size: 22px;
+        margin-top: 8px;
+    }
+}

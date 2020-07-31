@@ -1,0 +1,258 @@
+:root {
+  --blue: #007bff;
+  --indigo: #6610f2;
+  --purple: #6f42c1;
+  --pink: #e83e8c;
+  --red: #dc3545;
+  --orange: #fd7e14;
+  --yellow: #ffc107;
+  --green: #28a745;
+  --teal: #20c997;
+  --cyan: #17a2b8;
+  --white: #fff;
+  --gray: #6c757d;
+  --gray-dark: #343a40;
+  --primary: #007bff;
+  --secondary: #6c757d;
+  --success: #28a745;
+  --info: #17a2b8;
+  --warning: #ffc107;
+  --danger: #dc3545;
+  --light: #f8f9fa;
+  --dark: #343a40;
+  --breakpoint-xs: 0;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+  --miso-content-min-height: 230px;
+}
+
+.auto-loading {
+  display: none;
+}
+
+div:first-child.auto-loading {
+  display: block;
+}
+
+.logo {
+  text-align: center;
+  display: flex;
+  width: 9cm;
+  height: 4cm;
+  margin-top: 1cm;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: auto;
+  padding-left: 1cm;
+  padding-right: 1cm;
+}
+
+.progress-bar-black-striped {
+  background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.75) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, 0.75) 50%, rgba(0, 0, 0, 0.75) 75%, transparent 75%, transparent);
+  background-size: 1rem 1rem;
+}
+
+.container .card {
+  margin-bottom: 10px;
+}
+
+.container .card:last-child {
+  margin-bottom: 0px;
+}
+
+.form-container {
+  padding: 40px;
+  background: var(--secondary);
+}
+
+.form-item {
+  margin-top: 20px;
+}
+
+.form-item:first-child {
+  margin-top: 0px;
+}
+
+.title-banner {
+  background: var(--secondary);
+  color: var(--light);
+  position: relative;
+}
+
+.title-right-stamp {
+  position: absolute;
+  right: 10px;
+}
+
+.card-item-row {
+  display: flex;
+  align-items: center;
+}
+
+.card-item-row span {
+  margin-right: 5px;
+}
+
+.card-item-row span:last-child {
+  margin-right: 0px;
+}
+
+.card-body div {
+  margin-bottom: 10px;
+}
+
+.card-body div:last-child {
+  margin-bottom: 0px;
+}
+
+/***  Tanita Body Chart  ***/
+.tanita-body-chart {
+  position: relative;
+  width: fit-content;
+}
+
+.tanita-body-chart div {
+  position: absolute;
+}
+
+.tanita-body-chart .tanita-body-chart-trunk {
+  top: 50px;
+  left: 180px;
+}
+
+.tanita-body-chart .tanita-body-chart-r-arm {
+  top: 140px;
+  left: 310px;
+}
+
+.tanita-body-chart .tanita-body-chart-l-arm {
+  top: 140px;
+  left: 50px;
+}
+
+.tanita-body-chart .tanita-body-chart-r-leg {
+  top: 260px;
+  left: 310px;
+}
+
+.tanita-body-chart .tanita-body-chart-l-leg {
+  top: 260px;
+  left: 50px;
+}
+
+/***  Basic Style  ***/
+
+.round-corner {
+  border-radius: 25px;
+}
+
+.reserve-footer {
+  min-height: 50px;
+  max-height: 50px;
+}
+
+/***  Direct Overwrite  ***/
+
+.table {
+  margin-bottom: 0px;
+}
+
+.table td {
+  vertical-align: middle;
+}
+
+/*.progress-bar {
+  width: 100%;
+}*/
+
+/***  Dynamic Container  ***/
+
+.container-flex-1024 {
+  display: flex;
+  flex-direction: column;
+}
+
+/*@media (min-width: 992px) {
+  
+  .container-flex-1024 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .container-flex-1024 div {
+    margin-top: 0px;
+    margin-right: 10px;
+  }
+
+  .container-flex-1024 div:last-child {
+    margin-right: 0px;
+  }
+
+}*/
+
+@element body and (min-width: 576px) {
+  .container {
+    max-width: 540px !important;
+  }
+}
+
+@element body and (min-width: 768px) {
+  .container {
+    max-width: 720px !important;
+  }
+}
+
+@element body and (min-width: 992px) {
+  
+  .container-flex-1024 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .container-flex-1024 div {
+    margin-top: 0px;
+    margin-right: 10px;
+  }
+
+  .container-flex-1024 div:last-child {
+    margin-right: 0px;
+  }
+
+  .container {
+    max-width: 960px !important;
+  }
+}
+
+@element body and (min-width: 1200px) {
+  .container {
+    max-width: 1140px !important;
+  }
+}
+
+@media print {
+  .container-flex-1024 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .container-flex-1024 div {
+    margin-top: 0px;
+    margin-right: 10px;
+  }
+
+  .container-flex-1024 div:last-child {
+    margin-right: 0px;
+  }
+
+  footer {
+    display: none;
+  }
+}

@@ -1,0 +1,140 @@
+body {
+    background-color: royalblue;
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.my-container-page3 {
+    background-color: cornflowerblue;
+    justify-content: center;
+  
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+
+    margin-top: 5cm;
+    margin-bottom: auto;
+
+    padding-top: 34px;
+    padding-bottom: 36px;
+    border-radius: 1cm;
+    box-shadow: 8px 8px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.image-page3 {
+    margin-left: auto;
+    margin-right: auto;
+    width: 150px;
+    height: 150px;
+}
+
+.form-control {
+    text-align: left;
+    /*ปรับตรงกลางใช้ margin left/right auto*/
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.button-page3 {
+    background-color: midnightblue;
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: myFont;
+    font-weight: bold;
+    font-size: 30px;
+    border: none;
+    border-radius: 30px;
+}
+
+
+button:hover {
+    outline:none;
+    box-shadow: none;
+    background-color: rgb(0,0,158);
+} 
+
+*:focus {
+    outline: 0 !important;
+}
+
+.label-page3 {
+    text-align: center;
+    color: #D01911;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: myFont;
+    margin-top: 12px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@font-face {
+    font-family: myFont;
+    src: url(assets/fonts/THSarabun_Bold.ttf);
+    font-weight: bold;
+}
+
+/*Desktop size*/
+@media only screen and (min-width: 414px) {
+    .my-container-page3 {
+        width: 14cm;
+    }
+    .form-control {
+        width: 10cm;
+        margin-top: 20px;
+    }
+    .button-page3{
+        width: 10cm;
+    }
+}
+
+/*Mobile size*/
+@media only screen and (max-width: 1280px) {
+    .image-page3{
+        width: 3cm;
+        height: 3cm;
+        margin : 0;
+    }
+    .my-container-page3 {
+        width: 320px;
+        margin-top: 3cm;
+        border-radius: 20px;
+    }
+    .form-control {
+        width: 6cm;
+        height: 25px;
+        font-family: myFont;
+        font-size: 16px;
+        border-radius: 4px;
+        border: none;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-top: 10px;
+    }
+    .button-page3{
+        width: 5cm;
+        font-size: 24px;
+        height: 34px;
+    }
+    .label-page3{
+        font-size: 20px;
+    }
+}
+
+@font-face {
+    font-family: myFont;
+    src: url(assets/fonts/THSarabun\ Bold.ttf);
+    font-weight: bold;
+}

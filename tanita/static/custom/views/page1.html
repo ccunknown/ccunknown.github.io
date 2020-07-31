@@ -1,0 +1,100 @@
+<div class="container d-flex flex-column justify-content-center">
+  <img class="logo" src="static/custom/images/logo.png" alt="logo">
+  <h1>
+    <center>
+      <b>WELCOME TO SCALA</b>
+    </center>
+  </h1>
+  <!-- card กล่องข้อความ-->
+  <div v-if="state=='idle'" class="form-container round-corner d-flex flex-column justify-content-center">
+
+    <!--กรอกกชื่อนามสกุล -->
+    <div class="form-item">
+      <input v-model="form.name" type="text" class="form-control form-element" placeholder="ชื่อ-นามสกุล">
+    </div>
+
+    <!--กรอกอายุ-->
+    <div class="form-item">
+      <input type="number" v-model="form.age" class="form-control form-element" placeholder="อายุ"> 
+    </div>
+
+    <!--กรอกเพศ-->
+    <div class="form-item">
+      <select v-model="form.gender" class="form-control form-element" >
+        <option :value="null" disabled>--เลือกเพศของท่าน--</option>
+        <option value="male">เพศชาย</option>
+        <option value="female">เพศหญิง</option>
+      </select>
+    </div>
+
+    <!--กรอกส่วนสูง-->
+    <div class="form-item">
+      <input v-model="form.height" type="number" class="form-control form-element" placeholder="ส่วนสูง(เซนติเมตร)">
+    </div>
+
+    <!--กรอกน้ำหนักเสื้อผ้า-->
+    <div class="form-item">
+      <input v-model="form.clothWeight" type="number" class="form-control form-element" placeholder="น้ำหนักเสื้อผ้า(กิโลกรัม)">
+    </div>
+
+    <!--กรอกลักษณะร่างกาย-->
+    <!-- <div class="form-item">
+      <select v-model="form.athelete" id="Athelete" class="form-control form-element">
+        <option :value="null" disabled>--เลือกลักษณะร่างกายของท่าน--</option>
+        <option value="standard">ร่างกายปกติ</option>
+        <option value="athletic">นักกีฬา</option>
+      </select>
+    </div> -->
+
+    <!--กรอก ID-->
+    <!-- <div class="form-item">
+      <input v-model="form.id" disabled type="text" class="form-control form-element" placeholder="กรุณาตั้ง ID ของท่าน เช่น 1234">
+    </div> -->
+
+    <!--Checkbox-->
+    <div class="form-item d-flex justify-content-center">
+      <div class="checkbox-page1 mt-2">
+        <input v-model="form.termOfService" type="checkbox" id="checkbox"> ข้าพเจ้ายินยอมรับ<u>ข้อกำหนดการให้บริการ</u>
+      </div>
+    </div>
+    <!--ปุ่ม ตกลง-->
+    <div class="form-item d-flex justify-content-center">
+      <button @click="start" class="btn btn-primary">ตกลง</button>
+    </div>
+  </div>
+
+  <div v-if="state=='sending'" class="form-container round-corner p-5">
+    <div class="progress">
+      <div class="progress-bar progress-bar-black-striped bg-warning progress-bar-animated w-100">
+      </div>
+    </div>
+    <div class="d-flex justify-content-center mt-3">
+      <span class="text-light">
+        Sending request to gateway ...
+      </span>
+    </div>
+  </div>
+
+  <div v-if="state=='weighing'" class="form-container round-corner p-5">
+    <div class="d-flex flex-column justify-content-center text-light">
+      <div class="d-flex justify-content-center">
+        <i class="fas fa-weight fa-5x"></i>
+      </div>
+      <div class="d-flex flex-column justify-content-center mt-3">
+        <span align="center">
+          System ready
+        </span>
+        <span align="center">
+          Wait 'beep' signal and step on to Tanita.
+        </span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<div v-if="debug">
+  <br><br>
+  <pre><code>form: {{form}}</code></pre>
+</div>

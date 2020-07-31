@@ -1,0 +1,814 @@
+body {
+    background-color: royalblue;
+}
+
+.container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 4cm;
+}
+
+#topic-header-text h1 {
+    background-color: midnightblue;
+    color: white;
+    font-family: myFont;
+    font-size: 50px;
+    margin: 0;
+    text-align: center;
+    padding-top: 0.5cm;
+}
+
+#topic-header-text p {
+    background-color: midnightblue;
+    color: white;
+    font-family: myFont;
+    font-size: 40px;
+    margin: 0;
+    text-align: center;
+    padding-bottom: 0.5cm;
+}
+
+.collapsible {
+    background-color: rgb(68, 45, 216);
+    color: white;
+    cursor: pointer;
+    margin: auto;
+    padding: 12px;
+    padding-left: 2%;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-family: myFont;
+    font-size: 26px;
+    table-layout: auto;
+}
+
+.active, .collapsible:hover {
+    background-color: midnightblue;
+}
+
+.collapsible:after {
+    content: '\002B';
+    color: white;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+.active:after {
+    content: "\2212";
+}
+
+.content {
+    background-color: white;
+    padding: 0px;
+    max-height: 0;
+    margin: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+/* -------------------------------- ปรับข้อมูลชุดที่ 1 ----------------------------------*/
+
+.my-container1-page2 {
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    margin-left: 3%;
+}
+
+#text-data h1 {
+    font-size: 22px;
+    font-weight: bold;
+    display: inline-block;
+    margin: 0;
+    line-height: 20px;
+    font-family: myFont;
+    margin-top: 10px;
+}
+
+#text-data p {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 22px;
+    line-height: 26px;
+    margin: 0;
+    font-family: myFont;
+    margin-top: 7px;
+}
+
+.data-table1 {
+    border-bottom: 1px solid #ddd;
+    margin-right: 8%;
+}
+
+/* ------------------------------------ ปรับข้อมูลชุดที่ 2 --------------------------------*/
+
+.my-container2-page2 {
+    background-color: white;
+    margin-bottom: 0;
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#table1-column-head {
+    background-color: rgb(140, 122, 252);
+    text-align: center;
+    width: 20%;
+}
+
+#table1-row-head {
+    background-color: rgb(140, 122, 252);
+}
+
+#table1 {
+    text-align: center;
+    font-family: myFont;
+    width: 100%;
+}
+
+#table1 td {
+    text-align: center;
+    font-size: 22px;
+    width: 3cm;
+    font-weight: 600;
+}
+
+/* ------------------------------------ ปรับข้อมูลชุดที่ 3 -----------------------------------*/
+
+.my-container3-page2 {
+    margin: auto;
+    width: 100%;
+    height: 100%;
+}
+
+#table2 {
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    font-size: 22px;
+    font-family: myFont;
+    border: 1px;
+}
+
+#table2-row1-column1 {
+    background-color: lightskyblue;
+    table-layout: auto;
+    font-weight: bolder;
+    font-style: myFontItalic;
+    font-size: 22px;
+    width: 10cm;
+    height: auto;
+}
+
+.table2-row1-column2 {
+    text-align: center;
+    table-layout: auto;
+    background-color: white;
+    border-style: hidden;
+    width: 3cm;
+}
+
+.table2-row1-column3-th-text-1 {
+    background-color: gainsboro;
+    table-layout: auto;
+    text-align: center;
+    width: 5cm;
+}
+
+.table2-row1-column3-th-text-2 {
+    background-color: rgb(238, 235, 235);
+    table-layout: auto;
+    text-align: center;
+    width: 5cm;
+}
+
+.table2-row1-column3-td-text-1 {
+    background-color: gainsboro;
+    table-layout: auto;
+    text-align: center;
+    width: 3cm;
+}
+
+.table2-row1-column3-td-text-2 {
+    background-color: rgb(238, 235, 235);
+    table-layout: auto;
+    text-align: center;
+    width: 3cm;
+}
+
+.table2-row1-column3 {
+    background-color: white;
+    table-layout: auto;
+    border: none;
+    width: 68%;
+}
+
+#table2-row2-column1 {
+    background-color: cornflowerblue;
+    table-layout: auto;
+    font-style: myFontItalic;
+    height: auto;
+}
+
+.table2-row2-column2 {
+    text-align: center;
+    table-layout: auto;
+    background-color: white;
+    border: none;
+    border-style: hidden;
+    width: 3cm;
+}
+
+.table2-row2-column3 {
+    background-color: white;
+    table-layout: auto;
+    border: none;
+    width: 25cm;
+}
+
+#table2-row3-column1 {
+    background-color: palegreen;
+    table-layout: auto;
+    font-style: myFontItalic;
+    height: auto;
+}
+
+.table2-row3-column2 {
+    text-align: center;
+    table-layout: auto;
+    background-color: white;
+    border-style: hidden;
+    width: 3cm;
+}
+
+.table2-row3-column3 {
+    background-color: white;
+    table-layout: auto;
+    border: none;
+    width: 25cm;
+}
+
+#table2-row4-column1 {
+    background-color: rgb(69, 190, 122);
+    table-layout: auto;
+    font-style: myFontItalic;
+    height: auto;
+}
+
+.table2-row4-column2 {
+    text-align: center;
+    table-layout: auto;
+    background-color: white;
+    border-style: hidden;
+    width: 3cm;
+}
+
+.table2-row4-column3 {
+    background-color: white;
+    table-layout: auto;
+    border: none;
+    width: 25cm;
+}
+
+.column3 {
+    border-style: hidden;
+}
+
+.progress-text {
+    border: none;
+}
+
+.progress-ecwtbw-percent {
+    font-size: 25px;
+    font-family: myFont;
+    text-align: center;
+}
+
+.progress-bmr {
+    font-size: 25px;
+    font-family: myFont;
+    text-align: center;
+}
+
+.progress-viserral-fat-rating {
+    font-size: 25px;
+    font-family: myFont;
+    text-align: center;
+}
+
+/*ปรับข้อมูลชุดที่ 4*/
+
+.my-container4-page2 {
+    background-color: white;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
+* {
+    transition: all 0.3s ease-out;
+}
+
+p {
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #666666;
+}
+
+.card3-1 {
+    display: block;
+    top: 0px;
+    position: relative;
+    background-color: #f2f8f9;
+    border-radius: 4px;
+    margin: 12px;
+    text-decoration: none;
+    text-align: center;
+    overflow: hidden;
+    border: 1px solid #f2f8f9;
+    width: 11cm;
+}
+
+.card3-1:hover {
+    border: none;
+    box-shadow: 0px 0px 999px 999px rgba(255, 255, 255, 0.5);
+    z-index: 500;
+    transition: opactiy 0.3s linear;
+    opacity: 1;
+}
+
+.card3-2 {
+    display: block;
+    top: 0px;
+    position: relative;
+    background-color: #f2f8f9;
+    border-radius: 4px;
+    margin: 12px;
+    text-decoration: none;
+    text-align: center;
+    overflow: hidden;
+    border: 1px solid #f2f8f9;
+    width: 11cm;
+}
+
+.card3-2:hover {
+    border: none;
+    box-shadow: 0px 0px 999px 999px rgba(255, 255, 255, 0.5);
+    z-index: 500;
+    transition: opactiy 0.3s linear;
+    opacity: 1;
+}
+
+.image-page2-dashboard-muscle {
+    text-align: center;
+    border-radius: 10px;
+    table-layout: auto;
+    width: 100%;
+    height: 100%;
+}
+
+.image-page2-dashboard-fat {
+    text-align: center;
+    border-radius: 10px;
+    table-layout: auto;
+    width: 100%;
+    height: 100%;
+}
+
+.top-left-1 {
+    font-size: 30px;
+    font-weight: bold;
+    position: absolute;
+    top: 125px;
+    left: 50px;
+}
+
+.top-right-1 {
+    font-size: 30px;
+    font-weight: bold;
+    position: absolute;
+    top: 125px;
+    right: 50px;
+}
+
+.bottom-left-1 {
+    font-size: 30px;
+    font-weight: bold;
+    position: absolute;
+    bottom: 34px;
+    left: 50px;
+}
+
+.bottom-right-1 {
+    font-size: 30px;
+    font-weight: bold;
+    position: absolute;
+    bottom: 34px;
+    right: 50px;
+}
+
+.top-center-1 {
+    font-size: 20px;
+    font-weight: bold;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.top-left-2 {
+    font-size: 30px;
+    font-weight: bold;
+    position: absolute;
+    top: 125px;
+    left: 50px;
+}
+
+.top-right-2 {
+    font-size: 30px;
+    font-weight: bold;
+    position: absolute;
+    top: 125px;
+    right: 50px;
+}
+
+.bottom-left-2 {
+    font-size: 30px;
+    font-weight: bold;
+    position: absolute;
+    bottom: 34px;
+    left: 50px;
+}
+
+.bottom-right-2 {
+    font-size: 30px;
+    font-weight: bold;
+    position: absolute;
+    bottom: 34px;
+    right: 50px;
+}
+
+.top-center-2 {
+    font-size: 20px;
+    font-weight: bold;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* --------------------------------- ปรับปุ่ม download pdf --------------------------------------*/
+
+.grid-container {
+    overflow: hidden;
+    justify-content: center;
+    display: flex;
+    background-color: royalblue;
+    position: fixed;
+    bottom: 55px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.button-download-pdf-page2 {
+    justify-content: center;
+    background-color: red;
+    color: white;
+    width: 400px;
+    height: 45px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: myFont;
+    font-weight: bold;
+    font-size: 30px;
+    border: none;
+    border-radius: 30px;
+    font-family: myFont;
+    cursor: hand;
+}
+
+button:hover {
+    outline: none;
+    box-shadow: none;
+    background-color: rgb(146, 13, 13);
+}
+
+*:focus {
+    outline: 0 !important;
+}
+
+/*Navigation-bar footer*/
+
+.navbar {
+    background-color: midnightblue;
+    display: block;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 1.5cm;
+}
+
+.text-footer-1 {
+    color: white;
+    float: left;
+    font-size: 30px;
+    font-family: myFont;
+    font-weight: bold
+}
+
+.text-footer-2 {
+    color: white;
+    float: right;
+    font-size: 30px;
+    font-family: myFont;
+    font-weight: bold
+}
+
+.text-footer-1:hover {
+    color: white;
+}
+
+.text-footer-2:hover {
+    color: white;
+}
+
+@font-face {
+    font-family: myFont;
+    src: url(assets/fonts/THSarabun_Bold.ttf);
+    font-weight: bold;
+}
+
+/*******************************Mobile Site*********************************/
+
+@media only screen and (max-width: 1280px) {
+    .container {
+        width: 100%;
+        height: 100%;
+        padding-bottom: 3cm;
+    }
+    #topic-header-text h1 {
+        font-size: 20px;
+        padding-top: 10px;
+    }
+    #topic-header-text p {
+        font-size: 20px;
+        padding-bottom: 10px;
+    }
+    .collapsible {
+        font-size: 20px;
+    }
+    .active, .collapsible:hover {
+        background-color: midnightblue;
+    }
+    .collapsible:after {
+        content: '\002B';
+        color: white;
+        font-weight: bold;
+        float: right;
+        margin-left: 5px;
+    }
+    .active:after {
+        content: "\2212";
+    }
+    .content {
+        background-color: white;
+        padding: 0px;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s ease-out;
+    }
+    /*ปรับข้อมูลชุดที่ 1*/
+    .my-container1-page2 {
+        margin-left: 4%;
+    }
+    #text-data h1 {
+        font-size: 20px;
+    }
+    #text-data p {
+        font-size: 20px;
+    }
+    .data-table1 {
+        margin-right: 8%;
+    }
+    /*ปรับข้อมูลชุดที่ 2*/
+    .my-container2-page2 {
+        background-color: white;
+        margin-bottom: 0;
+        margin-top: 0;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+    }
+    #table1-column-head {
+        background-color: rgb(148, 133, 247);
+        align-items: center;
+        text-align: center;
+    }
+    #table1-row-head {
+        background-color: rgb(148, 133, 247);
+    }
+    #table1 {
+        text-align: center;
+        font-size: 18px;
+        font-family: myFont;
+        width: 100%;
+    }
+    #table1 td {
+        text-align: center;
+        font-size: 18px;
+        width: 3cm;
+    }
+    #table1 tr {
+        font-size: 18px;
+    }
+    /*ปรับข้อมูลชุดที่ 3*/
+    .my-container3-page2 {
+        margin: auto;
+        width: 100%;
+        height: 100%;
+    }
+    #table2 {
+        text-align: center;
+        font-size: 18px;
+        width: 100%;
+        height: 100%;
+        font-family: myFont;
+    }
+    #table2-row1-column1 {
+        font-size: 18px;
+    }
+    #table2-row2-column1 {
+        font-size: 18px;
+    }
+    #table2-row3-column1 {
+        font-size: 18px;
+    }
+    #table2-row4-column1 {
+        font-size: 18px;
+    }
+    .table2-row1-column2 {
+        width: 60px;
+    }
+    .table2-row2-column2 {
+        width: 60px;
+    }
+    .table2-row3-column2 {
+        width: 60px;
+    }
+    .table2-row4-column2 {
+        width: 60px;
+    }
+    .table2-row1-column3-th-text-1 {
+        font-size: 18px;
+    }
+    .table2-row1-column3-th-text-2 {
+        font-size: 18px;
+    }
+    .table2-row1-column3-td-text-1 {
+        font-size: 18px;
+    }
+    .table2-row1-column3-td-text-2 {
+        font-size: 18px;
+    }
+    .progress-ecwtbw-percent {
+        font-size: 18px;
+    }
+    .progress-bmr {
+        font-size: 18px;
+    }
+    .progress-viserral-fat-rating {
+        font-size: 18px;
+    }
+    /*ปรับข้อมูลชุดที่ 4*/
+    .my-container4-page2 {
+        background-color: white;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+    }
+    .card3-1 {
+        top: 0px;
+        margin: 8px;
+        margin-left: 1cm;
+        border: 1px solid #f2f8f9;
+        width: auto;
+        height: auto;
+        border-radius: 4px;
+    }
+    .card3-2 {
+        top: 0px;
+        margin: 12px;
+        margin-left: 1cm;
+        width: auto;
+        height: auto;
+    }
+    .image-page2-dashboard-muscle {
+        width: 100%;
+        height: 100%;
+    }
+    .image-page2-dashboard-fat {
+        width: 100%;
+        height: 100%;
+    }
+    .segment-text-page4 {
+        font-size: 18px;
+        padding: 0;
+        margin: 1px;
+    }
+    .top-left-1 {
+        font-size: 18px;
+        top: 40%;
+        left: 12%;
+    }
+    .top-right-1 {
+        font-size: 18px;
+        top: 40%;
+        right: 12%;
+    }
+    .bottom-left-1 {
+        font-size: 18px;
+        bottom: 12%;
+        left: 12%;
+    }
+    .bottom-right-1 {
+        font-size: 18px;
+        bottom: 12%;
+        right: 12%;
+    }
+    .top-center-1 {
+        font-size: 16px;
+        top: 20%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .top-left-2 {
+        font-size: 18px;
+        top: 40%;
+        left: 12%;
+    }
+    .top-right-2 {
+        font-size: 18px;
+        top: 40%;
+        right: 12%;
+    }
+    .bottom-left-2 {
+        font-size: 18px;
+        bottom: 12%;
+        left: 12%;
+    }
+    .bottom-right-2 {
+        font-size: 18px;
+        bottom: 12%;
+        right: 12%;
+    }
+    .top-center-2 {
+        font-size: 16px;
+        top: 20%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    /*ปรับปุ่ม download pdf*/
+    .grid-container {
+        bottom: 1%;
+        width: 100%;
+        height: 1.5cm;
+    }
+    .button-download-pdf-page2 {
+        width: 200px;
+        height: 24px;
+        font-size: 18px;
+    }
+    /*Navigation-bar footer*/
+    .navbar {
+        bottom: 0;
+        width: 100%;
+        height: 30px;
+    }
+    .text-footer-1 {
+        font-size: 18px;
+        float: left;
+    }
+    .text-footer-2 {
+        font-size: 18px;
+        float: right;
+    }
+}
