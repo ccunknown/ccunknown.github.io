@@ -140,12 +140,13 @@ export default class Page1 {
           console.log(`get return result (id: ${data.id})`);
           let message = data.message;
           
+          let result;
           if(data.encrypt) {
             console.log(`message: ${message}`);
             result = this.controller.crypto.decrypt(message);
           }
           
-          let result = JSON.parse(message);
+          result = JSON.parse(message);
           console.log(`result: ${JSON.stringify(result, null, 2)}`);
 
           this.controller.params.primaryData = JSON.parse(JSON.stringify(this.vue.form));
