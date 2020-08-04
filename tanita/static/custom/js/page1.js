@@ -58,7 +58,7 @@ export default class Page1 {
 
   preset() {
     this.vue.state = `idle`;
-    this.vue.form = this.default.form;
+    this.vue.form = (this.vue.debug) ? this.controller.primaryData : this.default.form;
   }
 
   formCheck() {
@@ -111,6 +111,7 @@ export default class Page1 {
             "cloth": this.vue.form.clothWeight,
             "height": this.vue.form.height,
             "id": this.vue.form.id,
+            "jwk": this.vue.form.jwk
           }
         }
       })
