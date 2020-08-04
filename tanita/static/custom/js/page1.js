@@ -140,7 +140,7 @@ export default class Page1 {
           console.log(`get return result (id: ${data.id})`);
           let message = data.message;
           
-          if(data.encrypted) {
+          if(data.encrypt) {
             console.log(`message: ${message}`);
             result = this.controller.crypto.decrypt(encrypted);
           }
