@@ -110,6 +110,71 @@ div:first-child.auto-loading {
   margin-bottom: 0px;
 }
 
+
+/***  Badge Header Group  ***/
+.badge-header-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  max-width: 100%;
+  min-width: 50px;
+}
+
+.badge-header-group:last-child {
+  margin-bottom: 0px;
+}
+
+.form-row.flex-column .badge-header-group {
+  margin-bottom: 0px;
+  margin-right: 5px;
+}
+
+.badge-header-group:last-child {
+  margin-bottom: 0px;
+}
+
+.badge-union {
+  position: relative;
+  top: calc(-1px);
+  border-top-left-radius: 0;
+  border-radius: 0 3px 3px 3px;
+  border-style: solid;
+  border-width: 2px;
+}
+
+input.badge-union {
+  height: 24px;
+  background-color: var(--light);
+  font-size: 0.8rem;
+}
+
+select.badge-union {
+  height: 24px;
+  background-color: var(--light);
+  font-size: 0.8rem;
+}
+
+textarea.badge-union {
+  height: fit-content;
+}
+
+.label-badge {
+  width: fit-content;
+  border-radius: 3px 3px 0 0;
+  margin-bottom: 0;
+
+  display: inline-block;
+  padding: 0.25em 0.4em;
+  font-size: 75%;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+
 /***  Tanita Body Chart  ***/
 .tanita-body-chart {
   position: relative;
@@ -145,8 +210,8 @@ div:first-child.auto-loading {
   left: 50px;
 }
 
-/***  Basic Style  ***/
 
+/***  Basic Style  ***/
 .round-corner {
   border-radius: 25px;
 }
@@ -156,8 +221,8 @@ div:first-child.auto-loading {
   max-height: 50px;
 }
 
-/***  Direct Overwrite  ***/
 
+/***  Direct Overwrite  ***/
 .table {
   margin-bottom: 0px;
 }
@@ -166,35 +231,12 @@ div:first-child.auto-loading {
   vertical-align: middle;
 }
 
-/*.progress-bar {
-  width: 100%;
-}*/
 
 /***  Dynamic Container  ***/
-
 .container-flex-1024 {
   display: flex;
   flex-direction: column;
 }
-
-/*@media (min-width: 992px) {
-  
-  .container-flex-1024 {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-  }
-
-  .container-flex-1024 div {
-    margin-top: 0px;
-    margin-right: 10px;
-  }
-
-  .container-flex-1024 div:last-child {
-    margin-right: 0px;
-  }
-
-}*/
 
 @element body and (min-width: 576px) {
   .container {

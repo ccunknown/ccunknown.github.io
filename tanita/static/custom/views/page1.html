@@ -9,18 +9,21 @@
   <div v-if="state=='idle'" class="form-container round-corner d-flex flex-column justify-content-center">
 
     <!--กรอกกชื่อนามสกุล -->
-    <div class="form-item">
-      <input v-model="form.name" type="text" class="form-control form-element" placeholder="ชื่อ-นามสกุล">
+    <div class="badge-header-group grow-1">
+      <label class="label-badge badge-dark">Name</label>
+      <input v-model="form.name" type="text" class="badge-union border-dark" placeholder="ชื่อ-นามสกุล">
     </div>
 
     <!--กรอกอายุ-->
-    <div class="form-item">
-      <input type="number" v-model="form.age" class="form-control form-element" placeholder="อายุ"> 
+    <div class="badge-header-group grow-1">
+      <label class="label-badge badge-dark">Age</label>
+      <input v-model="form.age" type="number" class="badge-union border-dark" placeholder="อายุ">
     </div>
 
     <!--กรอกเพศ-->
-    <div class="form-item">
-      <select v-model="form.gender" class="form-control form-element" >
+    <div class="badge-header-group grow-1">
+      <label class="label-badge badge-dark">Gender</label>
+      <select v-model="form.gender" class="badge-union border-dark" >
         <option :value="null" disabled>--เลือกเพศของท่าน--</option>
         <option value="male">เพศชาย</option>
         <option value="female">เพศหญิง</option>
@@ -28,13 +31,15 @@
     </div>
 
     <!--กรอกส่วนสูง-->
-    <div class="form-item">
-      <input v-model="form.height" type="number" class="form-control form-element" placeholder="ส่วนสูง(เซนติเมตร)">
+    <div class="badge-header-group grow-1">
+      <label class="label-badge badge-dark">Height</label>
+      <input v-model="form.height" type="number" class="badge-union border-dark" placeholder="ส่วนสูง(เซนติเมตร)">
     </div>
 
     <!--กรอกน้ำหนักเสื้อผ้า-->
-    <div class="form-item">
-      <input v-model="form.clothWeight" type="number" class="form-control form-element" placeholder="น้ำหนักเสื้อผ้า(กิโลกรัม)">
+    <div class="badge-header-group grow-1">
+      <label class="label-badge badge-dark">Cloth Weight</label>
+      <input v-model="form.clothWeight" type="number" class="badge-union border-dark" placeholder="น้ำหนักเสื้อผ้า(กิโลกรัม)">
     </div>
 
     <!--กรอกลักษณะร่างกาย-->
