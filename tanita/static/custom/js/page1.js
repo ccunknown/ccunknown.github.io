@@ -134,12 +134,13 @@ export default class Page1 {
     return new Promise(async (resolve, reject) => {
       if(event.type == `message` && event.data) {
         let preData = JSON.parse(event.data);
+        console.log(`preData: ${JSON.stringify(preData, null, 2)}`);
         //if(preData.id == `brew-0` && preData.messageType == `propertyStatus` && preData.data && preData.data.result) {
         if(preData.id == `brew-0` && preData.messageType == `propertyStatus` && preData.data) {
           //let data = JSON.parse(preData.data.result);
-          let prop = JSON.parse(preData.data);
+          let prop = preData.data;
           console.log(`prop: ${JSON.stringify(prop, null, 2)}`);
-          if(prop && prop.result) {
+          if(prop && prop.result && prop.result != `null`) {
             let data = JSON.parse(prop.result);
             console.log(`get return result (id: ${data.id})`);
             let message = data.message;
