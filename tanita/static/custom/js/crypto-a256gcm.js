@@ -8,7 +8,7 @@ export default class CryptoA256GCM {
 
   initKey() {
     return new Promise(async (resolve, reject) => {
-      this.key = window.crypto.subtle.generateKey(
+      this.key = await window.crypto.subtle.generateKey(
         {"name": "AES-GCM", "length": 256}, 
         true, 
         ["encrypt", "decrypt"]
