@@ -136,14 +136,16 @@ export default class Page1 {
       if(preData.id == `brew-0` && preData.messageType == `propertyStatus` && preData.data && preData.data.result) {
         let data = JSON.parse(preData.data.result);
         console.log(`data: ${JSON.stringify(data, null, 2)}`);
-        if(data["ID number"] && data["ID number"].value) {
-          let id = Number(data["ID number"].value);
-          if(id == this.vue.form.id) {
-            console.log(`get return result (id: ${id})`);
-            this.controller.params.primaryData = JSON.parse(JSON.stringify(this.vue.form));
-            this.controller.params.measurement = JSON.parse(JSON.stringify(data));
-            this.nextPage();
-          }
+        if(data.id && data.id == this.vue.form.id) {
+          console.log(`get return result (id: ${id})`);
+          let encrypted = data.message;
+          console.log(`message: ${encrypted}`);
+          let result = this.controller.crypto.decrypt(encrypted);
+          console.log(`result: ${JSON.stringify(result, null, 2)}`);
+
+          this.controller.params.primaryData = JSON.parse(JSON.stringify(this.vue.form));
+          this.controller.params.measurement = JSON.parse(JSON.stringify(data));
+          this.nextPage();
         }
         else if(data && Number(data) == this.vue.form.id) {
           console.log(`Weighing`);

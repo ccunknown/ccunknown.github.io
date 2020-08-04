@@ -2,8 +2,8 @@ export default class CryptoA256GCM {
   constructor() {
     console.log(`CryptoA256GCM: constructor() >> `);
     this.cryptographer = new Jose.WebCryptographer();
-    this.cryptographer.setKeyEncryptionAlgorithm('A128GCM');
-    this.cryptographer.setContentEncryptionAlgorithm('A128GCM');
+    this.cryptographer.setKeyEncryptionAlgorithm('A256GCM');
+    this.cryptographer.setContentEncryptionAlgorithm('A256GCM');
   }
 
   initKey() {
