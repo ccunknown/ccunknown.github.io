@@ -142,7 +142,7 @@ export default class Page1 {
           
           if(data.encrypt) {
             console.log(`message: ${message}`);
-            result = this.controller.crypto.decrypt(encrypted);
+            result = this.controller.crypto.decrypt(message);
           }
           
           let result = JSON.parse(message);
