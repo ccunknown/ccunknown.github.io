@@ -137,7 +137,7 @@ export default class Page1 {
         if(preData.id == `brew-0` && preData.messageType == `propertyStatus` && preData.data && preData.data.result) {
           let data = JSON.parse(preData.data.result);
           console.log(`data: ${JSON.stringify(data, null, 2)}`);
-          if(data && data.id && data.id == this.vue.form.id) {
+          if(data && data.id && Number(data.id) == Number(this.vue.form.id)) {
             console.log(`get return result (id: ${data.id})`);
             let message = data.message;
 
