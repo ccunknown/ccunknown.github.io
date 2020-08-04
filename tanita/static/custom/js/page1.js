@@ -131,34 +131,37 @@ export default class Page1 {
     console.log(`Page1: onMessage() >> `);
     console.log(event);
 
-    if(event.type == `message` && event.data) {
-      let preData = JSON.parse(event.data);
-      if(preData.id == `brew-0` && preData.messageType == `propertyStatus` && preData.data && preData.data.result) {
-        let data = JSON.parse(preData.data.result);
-        console.log(`data: ${JSON.stringify(data, null, 2)}`);
-        if(data && data.id && data.id == this.vue.form.id) {
-          console.log(`get return result (id: ${data.id})`);
-          let message = data.message;
+    return new Promise(async (resolve, reject) => {
+      if(event.type == `message` && event.data) {
+        let preData = JSON.parse(event.data);
+        if(preData.id == `brew-0` && preData.messageType == `propertyStatus` && preData.data && preData.data.result) {
+          let data = JSON.parse(preData.data.result);
+          console.log(`data: ${JSON.stringify(data, null, 2)}`);
+          if(data && data.id && data.id == this.vue.form.id) {
+            console.log(`get return result (id: ${data.id})`);
+            let message = data.message;
 
-          if(data.encrypt) {
+            if(data.encrypt) {
+              console.log(`message: ${message}`);
+              message = await this.controller.crypto.decrypt(message);
+            }
+            
             console.log(`message: ${message}`);
-            message = this.controller.crypto.decrypt(message);
-          }
-          
-          console.log(`message: ${message}`);
-          let result = JSON.parse(message);
-          console.log(`result: ${JSON.stringify(result, null, 2)}`);
+            let result = JSON.parse(message);
+            console.log(`result: ${JSON.stringify(result, null, 2)}`);
 
-          this.controller.params.primaryData = JSON.parse(JSON.stringify(this.vue.form));
-          this.controller.params.measurement = JSON.parse(JSON.stringify(result));
-          this.nextPage();
-        }
-        else if(data && Number(data) == this.vue.form.id) {
-          console.log(`Weighing`);
-          this.vue.state = `weighing`;
+            this.controller.params.primaryData = JSON.parse(JSON.stringify(this.vue.form));
+            this.controller.params.measurement = JSON.parse(JSON.stringify(result));
+            this.nextPage();
+          }
+          else if(data && Number(data) == this.vue.form.id) {
+            console.log(`Weighing`);
+            this.vue.state = `weighing`;
+          }
         }
       }
-    }
+      resolve();
+    });
   }
 
   nextPage() {
