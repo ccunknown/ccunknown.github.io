@@ -138,13 +138,18 @@ export default class Page1 {
         console.log(`data: ${JSON.stringify(data, null, 2)}`);
         if(data.id && data.id == this.vue.form.id) {
           console.log(`get return result (id: ${id})`);
-          let encrypted = data.message;
-          console.log(`message: ${encrypted}`);
-          let result = this.controller.crypto.decrypt(encrypted);
+          let message = data.message;
+          
+          if(data.encrypted) {
+            console.log(`message: ${message}`);
+            result = this.controller.crypto.decrypt(encrypted);
+          }
+          
+          let result = JSON.parse(message);
           console.log(`result: ${JSON.stringify(result, null, 2)}`);
 
           this.controller.params.primaryData = JSON.parse(JSON.stringify(this.vue.form));
-          this.controller.params.measurement = JSON.parse(JSON.stringify(data));
+          this.controller.params.measurement = JSON.parse(JSON.stringify(result));
           this.nextPage();
         }
         else if(data && Number(data) == this.vue.form.id) {
