@@ -30,7 +30,9 @@ class Controller {
         "js": "static/custom/js/websocket.js"
       },
       "crypto": {
-        "a256gcm": "static/custom/js/crypto-a256gcm.js"
+        "a256gcm": {
+          "js": "static/custom/js/crypto-a256gcm.js"
+        }
       }
     }
 
