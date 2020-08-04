@@ -134,10 +134,13 @@ export default class Page1 {
     return new Promise(async (resolve, reject) => {
       if(event.type == `message` && event.data) {
         let preData = JSON.parse(event.data);
-        if(preData.id == `brew-0` && preData.messageType == `propertyStatus` && preData.data && preData.data.result) {
-          let data = JSON.parse(preData.data.result);
-          console.log(`data: ${JSON.stringify(data, null, 2)}`);
-          if(data && data.id && Number(data.id) == Number(this.vue.form.id)) {
+        //if(preData.id == `brew-0` && preData.messageType == `propertyStatus` && preData.data && preData.data.result) {
+        if(preData.id == `brew-0` && preData.messageType == `propertyStatus` && preData.data) {
+          //let data = JSON.parse(preData.data.result);
+          let prop = JSON.parse(preData.data);
+          console.log(`prop: ${JSON.stringify(prop, null, 2)}`);
+          if(prop && prop.result) {
+            let data = JSON.parse(prop.result);
             console.log(`get return result (id: ${data.id})`);
             let message = data.message;
 
@@ -154,7 +157,7 @@ export default class Page1 {
             this.controller.params.measurement = JSON.parse(JSON.stringify(result));
             this.nextPage();
           }
-          else if(data && Number(data) == this.vue.form.id) {
+          else if(prop && prop.id && Number(prop.id) == Number(this.vue.form.id)) {
             console.log(`Weighing`);
             this.vue.state = `weighing`;
           }
