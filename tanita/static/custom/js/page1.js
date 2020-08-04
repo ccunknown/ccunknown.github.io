@@ -58,7 +58,9 @@ export default class Page1 {
 
   preset() {
     this.vue.state = `idle`;
-    this.vue.form = (this.vue.debug) ? this.controller.primaryData : this.default.form;
+    this.vue.form = (this.vue.debug) ? 
+      JSON.parse(JSON.stringify(this.controller.params.primaryData)) : 
+      JSON.parse(JSON.stringify(this.default.form));
   }
 
   formCheck() {
