@@ -52,6 +52,7 @@ class Controller {
       
       "url": null,
       "jwt": null,
+      "jwk": null,
       "debug": false,
       "page": null
     };
@@ -102,7 +103,7 @@ class Controller {
       let jwk = JSON.parse(JSON.stringify(await this.crypto.initKey()));
       console.log(`jwk: `, jwk);
 
-      this.params.primaryData.jwk = jwk;
+      this.params.jwk = jwk;
 
       resolve();
     });
