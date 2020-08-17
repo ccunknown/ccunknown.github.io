@@ -113,7 +113,7 @@ export default class Page1 {
             "cloth": this.vue.form.clothWeight,
             "height": this.vue.form.height,
             "id": this.vue.form.id,
-            "jwk": (this.controller.params.jwk) ? this.controller.params.jwk : null;
+            "jwk": (this.controller.params.jwk) ? this.controller.params.jwk : null
           }
         }
       })
