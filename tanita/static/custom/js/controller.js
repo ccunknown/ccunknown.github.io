@@ -99,7 +99,7 @@ class Controller {
     return new Promise(async (resolve, reject) => {
       let Obj = await this.loader.loadJs(this.component.crypto.a256gcm.js);
       this.crypto = new Obj();
-      let jwk = await this.crypto.initKey();
+      let jwk = JSON.parse(JSON.stringify(await this.crypto.initKey()));
       console.log(`jwk: ${jwk}`);
 
       this.params.primaryData.jwk = jwk;
