@@ -10,7 +10,7 @@ export default class Calculator {
       let hDefine = this.getClosest((gender == `male`) ? 1 : 2, define.list);
       //console.log(`hDefine: ${JSON.stringify(hDefine, null, 2)}`);
       let wDefine = this.getClosest(height, hDefine.value);
-      console.log(`wDefine: ${JSON.stringify(wDefine, null, 2)}`);
+      //console.log(`wDefine: ${JSON.stringify(wDefine, null, 2)}`);
       let summary = this.getClosest(weight, wDefine.value).value;
       let rangeArr = [];
       wDefine.value.forEach((elem) => {
