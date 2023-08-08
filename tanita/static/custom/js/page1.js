@@ -15,16 +15,17 @@ export default class Page1 {
   initVue() {
     return new Promise((resolve, reject) => {
       this.default = {};
+      this.default.barcode = ``,
       this.default.form = {
         "gender": `male`,
-        "athelete": `standard`,
+        "bodytype": `standard`,
         "clothWeight": "0.5",
         "termOfService": false,
         "id": window.crypto.getRandomValues(new Uint32Array(1))[0]
 
         // "id": window.crypto.getRandomValues(new Uint32Array(1))[0],
         // "gender": "male",
-        // "athelete": "standard",
+        // "bodytype": "standard",
         // "termOfService": true,
         // "height": "167",
         // "clothWeight": "0.5",
@@ -40,12 +41,72 @@ export default class Page1 {
           "ready": false,
           "state": `idle`,  //  idle, sending, weighing
           "debug": this.controller.params.debug,
+          "barcodeMode": this.controller.params.barcode,
+          "barcodeActive": this.controller.params.barcode,
+          "barcodeData": ``,
+          "barcodeError": ``,
           "form": {},
           "resource": {}
         },
         "methods": {
           "start": () => {
             this.formCheck();
+          },
+          "toggleBarcodeForm": (event, val = !this.vue.barcodeActive) => {
+            this.vue.barcodeActive = val;
+            console.log(`toggle barcodeMode: `, this.vue.barcodeActive);
+          },
+          "onBarcodeCommit": () => {
+            console.log(`onBarcodeCommit()`);
+            try {
+              this.vue.translateBarcodeData();
+              this.vue.toggleBarcodeForm(null, false);
+            } catch (err) {
+              console.error(err);
+            }
+          },
+          "onBarcodeChange": (...arg) => {
+            // console.log(`onBarcodeChange(): `, arg)
+            let data = `${this.vue.barcodeData}`;
+            if (!data.endsWith(`\n`) && !data.endsWith(`$`))
+              return ;
+            if (data.endsWith(`$`))
+              data = data.slice(0, data.length - 1);
+              this.vue.barcodeData = data;
+            try {
+              this.vue.translateBarcodeData(data);
+              this.vue.toggleBarcodeForm(null, false);
+            } catch (err) {
+              console.error(err);
+            }
+          },
+          "translateBarcodeData": (data = this.vue.barcodeData) => {
+            const ajv = new ajv7();
+            this.vue.barcodeError = ``;
+            const arr = data.split(`|`);
+            console.log(`datas: `, arr);
+            Object.entries(this.controller.params.dataOrder).forEach(([k, v]) => {
+              let val = arr.shift();
+              const tmpV = JSON.parse(JSON.stringify(v));
+              delete tmpV.convertTo;
+              const validate = ajv.compile(tmpV);
+              const valid = validate(val);
+              if (!valid) {
+                const errMessage = `"${k}" ${validate.errors[0].message}`;
+                this.vue.barcodeError = errMessage;
+                throw new Error(errMessage);
+              }
+                // console.error(`"${k}" ${validate.errors[0].message}`);
+                // console.error(validate.errors);
+              else {
+                if (v.convertTo === `number`)
+                  val = Number(val);
+                if (v.convertTo === `boolean`)
+                  val = Boolean(val);
+                this.vue.form[k] = val;
+              }
+              this.vue.form.termOfService = true;
+            });
           }
         }
       });
@@ -75,7 +136,7 @@ export default class Page1 {
         alert('กรุณากรอกส่วยสูงด้วยค่ะ');
       else if(!this.vue.form.clothWeight)
         alert('กรุณากรอกน้ำหนักเสื้อผ้า');
-      else if(!this.vue.form.athelete)
+      else if(!this.vue.form.bodytype)
         alert('กรุณาเลือกสภาพทางร่างกายด้วยค่ะ');
       else if(!this.vue.form.id)
         alert('กรุณากรอกID');
@@ -96,30 +157,34 @@ export default class Page1 {
     let jwt = this.controller.params.jwt;
     //this.vue.form.id = window.crypto.getRandomValues(new Uint32Array(1))[0];
     this.setWebsocket();
-
-    fetch(`${url}/things/brew-0/actions`, {
-      "method": "POST",
-      "headers": {
-        "accept": "application/json",
-        "content-type": "application/json",
-        "authorization": `Bearer ${jwt}`,
-      },
-      "body": JSON.stringify({
-        "brew": {
-          "input": {
-            "bodytype": this.vue.form.athelete,
-            "gender": this.vue.form.gender,
-            "age": this.vue.form.age,
-            "cloth": this.vue.form.clothWeight,
-            "height": this.vue.form.height,
-            "id": this.vue.form.id,
-            "jwk": (this.controller.params.jwk) ? this.controller.params.jwk : null
-          }
-        }
+    Promise.resolve()
+      .then(() => 
+        fetch(`${url}/things/brew-0/actions`, {
+          "method": "POST",
+          "headers": {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "authorization": `Bearer ${jwt}`,
+          },
+          "body": JSON.stringify({
+            "brew": {
+              "input": {
+                "bodytype": this.vue.form.bodytype,
+                "gender": this.vue.form.gender,
+                "age": this.vue.form.age,
+                "cloth": this.vue.form.clothWeight,
+                "height": this.vue.form.height,
+                "id": this.vue.form.id,
+                "jwk": (this.controller.params.jwk) ? this.controller.params.jwk : null,
+              },
+            },
+          }),
+        })
+      )
+      .then((res) => {
+        console.log(`res: `, res);
       })
-    })
-    .then((res) => {
-    });
+      .catch((err) => console.error(err));
   }
 
   setWebsocket() {

@@ -238,6 +238,102 @@ textarea.badge-union {
   flex-direction: column;
 }
 
+.v-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.h-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.h-full {
+  height: 100%;
+}
+
+/*** Barcode ***/
+.barcode-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  /* display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center; */
+}
+
+.barcode-backdrop {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.barcode-input-container {
+  position: absolute;
+  width: calc(100vw - 64px);
+  max-width: 768px;
+  overflow: auto;
+  /* width: 100vw;
+  height: 100vh; */
+  transform: translateX(calc(50vw - 50%)) translateY(calc(50vh - 50%));
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
+}
+
+.barcode-input-box {
+  height: fit-content;
+  /* width: fit-content; */
+  width: 100%;
+  overflow: visible;
+  border-radius: 0.25rem;
+  /* background-color: var(--dark); */
+  background-color: black;
+  opacity: 1;
+  gap: 2px;
+  white-space: nowrap;
+  padding: 20px;
+}
+
+.barcode-label {
+  color: var(--light);
+}
+
+.barcode-input {
+  flex-grow: 1;
+}
+
+.barcode-error {
+  color: var(--danger)
+}
+
+.barcode-active-button {
+  position: fixed;
+  top: 0;
+  transform: translateX(calc(50vw - 50%));
+  width: fit-content;
+  border-bottom-left-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+  background-color: black;
+  color: var(--light);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  cursor: pointer;
+}
+
 @element body and (min-width: 576px) {
   .container {
     max-width: 540px !important;

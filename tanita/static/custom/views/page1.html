@@ -96,10 +96,48 @@
     </div>
   </div>
 
+  <div v-if="debug">
+    <br><br>
+    <pre><code>form: {{form}}</code></pre>
+  </div>
 </div>
 
+<!-- Barcode Hover Button -->
+<div
+  v-if="barcodeMode"
+  class="barcode-active-button"
+  @click="toggleBarcodeForm"
+>
+  <img id="barcode-active-button" />
+  <span>Barcode</span>
+</div>
 
-<div v-if="debug">
-  <br><br>
-  <pre><code>form: {{form}}</code></pre>
+<!-- Barcode Form -->
+<div v-if="barcodeMode && barcodeActive" class="barcode-container">
+  <!-- Backdrop -->
+  <div class="barcode-backdrop" @click="toggleBarcodeForm" />
+  <!-- Barcode Input -->
+  <div class="barcode-input-container">
+    <div class="barcode-input-box v-container justify-content-start align-items-center">
+      <!-- Input -->
+      <div class="h-container justify-content-start align-items-center w-full">
+        <span class="barcode-label">Barcode:&nbsp;</span>
+        <input
+          class="barcode-input"
+          v-model="barcodeData"
+          placeholder="id | name | gender | bodytype | age | height | clothweight"
+          v-on:keyup.enter="onBarcodeCommit"
+          @input="onBarcodeChange"
+          autofocus
+        />
+      </div>
+      <!-- Error message -->
+      <span
+        v-if="barcodeError.length"
+        class="barcode-error w-full h-container justify-content-end"
+      >
+        {{ barcodeError }}
+      </span>
+    </div>
+  </div>
 </div>
