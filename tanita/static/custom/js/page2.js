@@ -218,7 +218,8 @@ export default class Page2 {
 
         console.log(`size.w: ${arr[0].size.w}`);
 
-        let wLeft = (width - arr[0].size.w)/2;
+        let wLeft = Math.abs((width - arr[0].size.w)/2);
+        // let wLeft = 0;
 
         doc.addImage(arr[0].img, 'PNG', wLeft, 10, arr[0].size.w, arr[0].size.h);
         doc.save(`tanita.pdf`);

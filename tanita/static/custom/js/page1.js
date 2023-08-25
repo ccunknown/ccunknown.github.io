@@ -41,6 +41,7 @@ export default class Page1 {
           "ready": false,
           "state": `idle`,  //  idle, sending, weighing
           "debug": this.controller.params.debug,
+          "showId": this.controller.params.id,
           "barcodeMode": this.controller.params.barcode,
           "barcodeActive": this.controller.params.barcode,
           "barcodeData": ``,

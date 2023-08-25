@@ -49,7 +49,7 @@ class Controller {
         "name": "Anonymous"
       },
       "dataOrder": {
-        id: { type: `string`, pattern: `^\\d+$`, convertTo: `number` },
+        id: { type: `string`, pattern: `^[-_0-9a-zA-Z]+$` },
         name: { type: `string` },
         gender: { enum: [ `male`, `female` ] },
         bodytype: { enum: [ `standard`, `athlete` ] },
@@ -64,6 +64,7 @@ class Controller {
       "jwt": null,
       "jwk": null,
       "debug": false,
+      "id": false,
       "barcode": false,
       "page": null
     };
@@ -91,6 +92,7 @@ class Controller {
       console.log(queryString);
       const urlParams = new URLSearchParams(queryString);
       this.params.debug = urlParams.get(`debug`) == `true`;
+      this.params.id = urlParams.get(`id`) == `true`;
       this.params.barcode = urlParams.get(`barcode`) == `true`;
       this.params.page = urlParams.get(`page`);
       this.params.url = urlParams.get(`url`);

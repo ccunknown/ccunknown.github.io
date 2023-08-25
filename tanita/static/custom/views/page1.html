@@ -8,6 +8,12 @@
   <!-- card กล่องข้อความ-->
   <div v-if="state=='idle'" class="form-container round-corner d-flex flex-column justify-content-center">
 
+    <!--กรอกก ID -->
+    <div v-if="showId" class="badge-header-group grow-1">
+      <label class="label-badge badge-dark">ID</label>
+      <input v-model="form.id" type="text" class="badge-union border-dark" placeholder="Place ID">
+    </div>
+    
     <!--กรอกกชื่อนามสกุล -->
     <div class="badge-header-group grow-1">
       <label class="label-badge badge-dark">Name</label>
