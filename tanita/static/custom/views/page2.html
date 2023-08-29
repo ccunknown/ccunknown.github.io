@@ -1,5 +1,5 @@
 <!--ส่วนหัว-->
-<div class="title-banner d-flex justify-content-center pt-1">
+<div id="page2-banner" class="title-banner d-flex justify-content-center pt-1">
   <div class="d-flex justify-content-center">
     <h3 class="d-none d-sm-none d-md-block">ผลการวัดค่ามวลร่างกาย</h3>
     <h3>&nbsp;</h3>
@@ -19,10 +19,14 @@
   </div>
 </div>
 
+<!-- Hidden report -->
+<div id="page2-hidden-report" class="page2-report" style="display: none;">
+</div>
+
 <div id="page2-report" class="page2-report">
 
   <!--ส่วนแสดงข้อมูล แบบ expansion panel(collapsible)-->
-  <div class="container p-3">
+  <div id="page2-report-container" class="container p-3">
     <!-------------------------------------ข้อมูลทั่วไป--------------------------------------->
     <div class="card" id="data-01">
       <div class="card-header">
@@ -87,6 +91,38 @@
     </div>
 
     <!------------------------------------ผลวิเคราะห์รวม------------------------------------>
+    <!-- Detail -->
+    <div class="d-flex flex-lg-row flex-md-column" style="gap: 5px;">
+      <!-- Measurement -->
+      <div class="tanita-chart">
+        <img
+          class="image-background"
+          src="static/custom/images/dashboard_detail.svg"
+          alt="dashboard_detail"
+          height="300px"
+        >
+        <div class="font-weight-bold tanita-chart-detail-body-weight">{{measure.weight.value.toFixed(1)}}</div>
+        <div class="font-weight-bold tanita-chart-detail-fat-percent">{{measure.fatPercent.value.toFixed(1)}}</div>
+        <div class="font-weight-bold tanita-chart-detail-fat-mass">{{measure.fatMass.value.toFixed(1)}}</div>
+        <div class="font-weight-bold tanita-chart-detail-muscle-mass">{{measure.muscleMass.value.toFixed(1)}}</div>
+        <div class="font-weight-bold tanita-chart-detail-bone-mass">{{measure.boneMass.value.toFixed(1)}}</div>
+        <div class="font-weight-bold tanita-chart-detail-bmi">{{measure.bmi.value.toFixed(1)}}</div>
+        <div class="font-weight-bold tanita-chart-detail-metabolic-age">{{measure.metabolicAge.value}}</div>
+      </div>
+      <!-- Physique Rating -->
+      <div class="tanita-chart">
+        <div class="tanita-chart">
+          <img
+            class="image-background"
+            src="static/custom/images/dashboard_physique_rating.svg"
+            alt="dashboard_detail"
+            height="300px"
+          >
+        </div>
+      </div>
+    </div>
+
+  
     <div class="card" id="data-02">
       <div class="card-header">
         ผลวิเคราะห์รวม
@@ -180,6 +216,121 @@
     </div>
 
     <!------------------------------------ข้อมูลชุดที่ 3--------------------------------------->
+    <div class="d-flex flex-lg-row flex-md-column" style="gap: 5px;">
+      <!-- TBW & ECW/TBW -->
+      <div class="d-flex flex-column" style="gap: 5px;">
+        <!-- TBW -->
+        <div class="tanita-chart">
+          <img
+            class="image-background"
+            src="static/custom/images/dashboard_tbw.svg"
+            alt="dashboard_tbw"
+            height="60px"
+          >
+          <div class="font-weight-bold tanita-chart-tbw-kg">{{measure.tbw.value.toFixed(1)}}</div>
+          <div class="font-weight-bold tanita-chart-tbw-percent">{{measure.tbwPercent.value.toFixed(1)}}</div>
+          <div class="font-weight-bold tanita-chart-tbw-ecw-kg">{{measure.ecw.value.toFixed(1)}}</div>
+          <div class="font-weight-bold tanita-chart-tbw-icw-kg">{{measure.icw.value.toFixed(1)}}</div>
+        </div>
+        <!-- ECW/TBW -->
+        <div class="tanita-chart">
+          <img
+            class="image-background"
+            src="static/custom/images/dashboard_ecw_tbw.svg"
+            alt="dashboard_ecw_tbw"
+            height="60px"
+          >
+          <div class="font-weight-bold tanita-chart-ecwpertbw-percent">{{measure.ecwPercent.value.toFixed(1)}}</div>
+          <div class="tanita-chart-ecwpertbw-gauge">
+            <div
+              v-for="i in 16" :key="i"
+              class="tanita-chart-ecwpertbw-gauge-bar"
+              :class="{
+                'active': (measure.ecwPercent.value - 31.0) > i
+              }"
+            >
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- BMR & VFR -->
+      <div class="d-flex flex-column" style="gap: 5px;">
+        <!-- BMR -->
+        <div class="tanita-chart">
+          <img
+            class="image-background"
+            src="static/custom/images/dashboard_bmr.svg"
+            alt="dashboard_bmr"
+            height="60px"
+          >
+          <div class="font-weight-bold tanita-chart-bmr-kj">{{measure.bmrKJ.value}}</div>
+          <div class="font-weight-bold tanita-chart-bmr-kcal">{{measure.bmrKCal.value}}</div>
+          <div class="tanita-chart-bmr-gauge">
+            <div
+              v-for="i in 6" :key="i"
+              class="tanita-chart-bmr-gauge-bar tanita-bmr-bar-under"
+              :class="{
+                'active': measure.bmrScore.value > i
+              }"
+            >
+            </div>
+            <div
+              v-for="i in 4" :key="i"
+              class="tanita-chart-bmr-gauge-bar tanita-bmr-bar-normal"
+              :class="{
+                'active': measure.bmrScore.value > i+6
+              }"
+            >
+            </div>
+            <div
+              v-for="i in 6" :key="i"
+              class="tanita-chart-bmr-gauge-bar tanita-bmr-bar-more"
+              :class="{
+                'active': measure.bmrScore.value > i+10
+              }"
+            >
+            </div>
+          </div>
+        </div>
+        <!-- VFR -->
+        <div class="tanita-chart">
+          <img
+            class="image-background"
+            src="static/custom/images/dashboard_vfr.svg"
+            alt="dashboard_vfr"
+            height="60px"
+          >
+          <div class="font-weight-bold tanita-chart-vfr-rating">{{measure.vfr.value}}</div>
+          <div class="tanita-chart-vfr-gauge">
+            <div
+              v-for="i in 6" :key="i"
+              class="tanita-chart-vfr-gauge-bar tanita-vfr-bar-avg"
+              :class="{
+                'active': measure.vfr.value > i
+              }"
+            >
+            </div>
+            <div
+              v-for="i in 4" :key="i"
+              class="tanita-chart-vfr-gauge-bar tanita-vfr-bar-high"
+              :class="{
+                'active': measure.vfr.value > i+6
+              }"
+            >
+            </div>
+            <div
+              v-for="i in 6" :key="i"
+              class="tanita-chart-vfr-gauge-bar tanita-vfr-bar-vhigh"
+              :class="{
+                'active': measure.vfr.value > i+10
+              }"
+            >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
     <div class="card" id="data-03">
       <div class="card-header">
         TBW - ECW/TBW - BMR - VFR

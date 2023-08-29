@@ -105,6 +105,7 @@ export default class Page2 {
         "ecwPercent": measure[`ECW %`],
         "bmrKJ": measure[`BMR kJ`],
         "bmrKCal": measure[`BMR kcal`],
+        "bmrScore": measure[`BMR score`],
         "vfr": measure[`Visceral fat rating`],
         
         "armLMuscleMass": measure[`[Left Arm] Muscle mass`],
@@ -173,33 +174,31 @@ export default class Page2 {
 
   save(target) {
     return new Promise(async (resolve, reject) => {
-      let body = $(`body`);
-      let footer = $(`footer`);
-      body.css({"width": "1000px"});
-      footer.css({"display": "none"});
+
+      const body = $(`body`);
+      const report = $(`#page2-hidden-report`);
+      const reportElem = $(`#page2-report-container`).clone(true);
+      const reportBanner = $(`#page2-banner`).clone(true);
+      report.empty();
+      report.append(reportBanner);
+      report.append(reportElem);
+      body.css({"width": "1000px", "max-width": "1000px", "min-width": "1000px"});
+      report.css({"width": "1000px", "max-width": "1000px", "min-width": "1000px", "display": "block"});
       EQCSS.apply();
-      // let imgArr = [
-      //   this.getCanvas(`#data-01`),
-      //   this.getCanvas(`#data-02`),
-      //   this.getCanvas(`#data-03`),
-      //   this.getCanvas(`#data-04`)
-      // ];
+
       let imgArr = [
-        this.getCanvas(`body`),
+        this.generateCanvas(report),
       ];
 
       Promise.all(imgArr)
       .then((canvasArr) => {
-        body.css({"width": "100%"});
-        footer.css({"display": "block"});
-        EQCSS.apply();
-
         let div = 5.5;
 
         let arr = canvasArr.map((elem) => {
+          let img = elem.toDataURL(`image/png`);
           let result = {
             "canvas": elem,
-            "img": elem.toDataURL(`image/png`),
+            "img": img,
             "size": {
               "w": elem.width/div,
               "h": elem.height/div
@@ -218,21 +217,93 @@ export default class Page2 {
 
         console.log(`size.w: ${arr[0].size.w}`);
 
-        let wLeft = Math.abs((width - arr[0].size.w)/2);
-        // let wLeft = 0;
+        let wLeft = (width - arr[0].size.w)/2;
 
         doc.addImage(arr[0].img, 'PNG', wLeft, 10, arr[0].size.w, arr[0].size.h);
         doc.save(`tanita.pdf`);
-
+        
+        report.empty();
+        body.css({"width": "100%", "max-width": "100%", "min-width": "100%"});
+        report.css({"display": "block"});
+        EQCSS.apply();
         resolve();
       });
     });
   }
 
+  // save(target) {
+  //   return new Promise(async (resolve, reject) => {
+  //     let body = $(`body`);
+  //     let footer = $(`footer`);
+  //     body.css({"width": "1000px"});
+  //     footer.css({"display": "none"});
+  //     EQCSS.apply();
+  //     // let imgArr = [
+  //     //   this.getCanvas(`#data-01`),
+  //     //   this.getCanvas(`#data-02`),
+  //     //   this.getCanvas(`#data-03`),
+  //     //   this.getCanvas(`#data-04`)
+  //     // ];
+  //     let imgArr = [
+  //       this.getCanvas(`body`),
+  //     ];
+
+  //     Promise.all(imgArr)
+  //     .then((canvasArr) => {
+  //       body.css({"width": "100%"});
+  //       footer.css({"display": "block"});
+  //       EQCSS.apply();
+
+  //       let div = 5.5;
+
+  //       let arr = canvasArr.map((elem) => {
+  //         let result = {
+  //           "canvas": elem,
+  //           "img": elem.toDataURL(`image/png`),
+  //           "size": {
+  //             "w": elem.width/div,
+  //             "h": elem.height/div
+  //           }
+  //         };
+  //         return result;
+  //       });
+
+  //       let doc = new jsPDF(`p`, `mm`, `A4`);
+
+  //       var width = doc.internal.pageSize.width;
+  //       var height = doc.internal.pageSize.height;
+
+  //       console.log(`width: ${width}`);
+  //       console.log(`height: ${height}`);
+
+  //       console.log(`size.w: ${arr[0].size.w}`);
+
+  //       // let wLeft = Math.abs((width - arr[0].size.w)/2);
+  //       // let wLeft = (width - arr[0].size.w)/2;
+  //       let wLeft = 0;
+
+  //       doc.addImage(arr[0].img, 'PNG', wLeft, 10, arr[0].size.w, arr[0].size.h);
+  //       doc.save(`tanita.pdf`);
+
+  //       resolve();
+  //     });
+  //   });
+  // }
+
   getCanvas(target) {
-    return new Promise(async (resolve, reject) => {
-      //let elem = $(`#${target}`);
-      let elem = $(`${target}`);
+    return new Promise((resolve, reject) => {
+      let elem = $(`#${target}`);
+      // let elem = $(`${target}`);
+      html2canvas(elem, {
+        onrendered: function(canvas) {
+          resolve(canvas);
+        }
+      });
+    });
+  }
+  generateCanvas(elem) {
+    return new Promise((resolve, reject) => {
+      // let elem = $(`${target}`);
       html2canvas(elem, {
         onrendered: function(canvas) {
           resolve(canvas);

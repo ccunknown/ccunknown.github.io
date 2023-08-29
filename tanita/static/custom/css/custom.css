@@ -29,6 +29,13 @@
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 
   --miso-content-min-height: 230px;
+
+  --tanita-light-blue: rgb(203, 239, 251);
+  --tanita-light-green: rgb(192, 231, 170);
+  --tanita-light-pink: rgb(252, 204, 228);
+  --tanita-light-yellow: rgb(254, 243, 164);
+  --tanita-light-red: rgb(251, 204, 188);
+  --tanita-light-gray: rgb(233, 233, 233);
 }
 
 .auto-loading {
@@ -174,6 +181,155 @@ textarea.badge-union {
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
+/***  Tanita Chart  ***/
+.tanita-chart {
+  position: relative;
+  width: fit-content;
+  font-size: 1.2rem
+}
+
+.tanita-chart div {
+  position: absolute;
+}
+
+/*** Tanita Detail ***/
+.tanita-chart-detail-body-weight {
+  top: 34px;
+  right: 340px;
+}
+.tanita-chart-detail-fat-percent {
+  top: 70px;
+  right: 340px;
+}
+.tanita-chart-detail-fat-mass {
+  top: 109px;
+  right: 340px;
+}
+.tanita-chart-detail-muscle-mass {
+  top: 148px;
+  right: 340px;
+}
+.tanita-chart-detail-bone-mass {
+  top: 187px;
+  right: 340px;
+}
+.tanita-chart-detail-bmi {
+  top: 225px;
+  right: 340px;
+}
+.tanita-chart-detail-metabolic-age {
+  top: 264px;
+  right: 340px;
+}
+
+/*** Tanita TBW ***/
+.tanita-chart-tbw-kg {
+  top: 2px;
+  right: 275px;
+}
+.tanita-chart-tbw-percent {
+  top: 27px;
+  right: 275px;
+}
+.tanita-chart-tbw-ecw-kg {
+  top: 16px;
+  right: 152px;
+}
+.tanita-chart-tbw-icw-kg {
+  top: 16px;
+  right: 33px;
+}
+
+/*** Tanita ECW per TBW ***/
+.tanita-chart-ecwpertbw-percent {
+  top: 15px;
+  right: 275px;
+}
+.tanita-chart-ecwpertbw-gauge {
+  top: 13px;
+  left: 205px;
+  display: flex;
+  flex-direction: row;
+  gap: 2px;
+}
+.tanita-chart-ecwpertbw-gauge-bar {
+  background-color: var(--tanita-light-gray);
+  border-radius: 0.15rem;
+  width: 12.5px;
+  height: 17px;
+  position: relative !important;
+}
+.tanita-chart-ecwpertbw-gauge-bar.active {
+  background-color: black;
+}
+
+/***  Tanita BMR  ***/
+.tanita-chart-bmr-kj {
+  top: 2px;
+  right: 286px;
+}
+.tanita-chart-bmr-kcal {
+  top: 28px;
+  right: 286px;
+}
+.tanita-chart-bmr-gauge {
+  top: 10px;
+  left: 228.5px;
+  display: flex;
+  flex-direction: row;
+  gap: 2px;
+}
+.tanita-chart-bmr-gauge-bar {
+  background-color: var(--tanita-light-gray);
+  border-radius: 0.15rem;
+  width: 12.5px;
+  height: 17px;
+  position: relative !important;
+}
+.tanita-bmr-bar-under {
+  background-color: var(--tanita-light-blue);
+}
+.tanita-bmr-bar-normal {
+  background-color: var(--tanita-light-green);
+}
+.tanita-bmr-bar-more {
+  background-color: var(--tanita-light-pink);
+}
+:is(.tanita-bmr-bar-under, .tanita-bmr-bar-normal, .tanita-bmr-bar-more).active {
+  background-color: black;
+}
+
+/*** Tanita VFR ***/
+.tanita-chart-vfr-rating {
+  top: 17px;
+  right: 293px;
+}
+.tanita-chart-vfr-gauge {
+  top: 14px;
+  left: 228.5px;
+  display: flex;
+  flex-direction: row;
+  gap: 2px;
+}
+.tanita-chart-vfr-gauge-bar {
+  background-color: var(--tanita-light-gray);
+  border-radius: 0.15rem;
+  width: 12.5px;
+  height: 17px;
+  position: relative !important;
+}
+.tanita-vfr-bar-avg {
+  background-color: var(--tanita-light-blue);
+}
+.tanita-vfr-bar-high {
+  background-color: var(--tanita-light-yellow);
+}
+.tanita-vfr-bar-vhigh {
+  background-color: var(--tanita-light-red);
+}
+:is(.tanita-vfr-bar-avg, .tanita-vfr-bar-high, .tanita-vfr-bar-vhigh).active {
+  background-color: black;
+}
 
 /***  Tanita Body Chart  ***/
 .tanita-body-chart {
