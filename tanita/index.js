@@ -1,6 +1,34 @@
+const os = require(`os`);
 const path = require(`path`);
+const fs = require(`fs`);
 const config = require(`dotenv`).config();
 const express = require(`express`);
+const multer  = require('multer');
+// const upload = multer({ dest: path.resolve(process.env.UPLOAD_DIR) });
+
+// Create Home Directory
+const homeDir = process.env[`HOME_DIR`];
+if (!fs.existsSync(homeDir)){
+  fs.mkdirSync(homeDir, { recursive: true });
+}
+
+console.log(`upload dir: `, process.env[`UPLOAD_DIR`]);
+
+var storage = multer.diskStorage({
+  destination: function (req, file, callback) {
+    // Create Upload Directory
+    const uploadDir = process.env[`UPLOAD_DIR`];
+    if (!fs.existsSync(uploadDir)){
+      fs.mkdirSync(uploadDir, { recursive: true });
+    }
+    callback(null, uploadDir);
+  },
+  filename: function (req, file, callback) {
+    callback(null, file.originalname);
+  }
+});
+const upload = multer({ storage });
+// const upload = multer({ dest: process.env[`UPLOAD_DIR`] });
 const app = express();
 
 const port = process.env.PORT;
@@ -17,9 +45,22 @@ app.use(`/static`, express.static(`static`))
 app.use(`/home`, express.static(`index.html`))
 
 app.get(`/`, (req, res) => {
-  // res.sendFile(path.join(__dirname, `index.html`));
-  // res.redirect(`/home?url=${gateway.host}&jwt=${gateway.jwt}&${paramString}`);
   res.redirect(`/home?${paramString}`);
+});
+
+app.post('/upload', upload.array('file'), function (req, res) {
+  console.log(req.files, req.body);
+  res.status(201).json(req.files);
+});
+
+app.post('/uploadpdf', upload.single('file'), function (req, res) {
+  console.log(req.file, req.body);
+  res.status(201).json(req.file);
+});
+
+app.post('/uploadjson', upload.single('file'), function (req, res) {
+  console.log(`req: `, req.path);
+  res.status(201).json(req.file);
 });
 
 app.listen(port, () => {

@@ -22,6 +22,12 @@ class Controller {
         "view": "static/custom/views/page4.html",
         "viewId": "page4-workspace",
         "js": "static/custom/js/page4.js"
+      },
+      // V2 of page2
+      "page5": {
+        "view": "static/custom/views/page5.html",
+        "viewId": "page5-workspace",
+        "js": "static/custom/js/page5.js"
       }
     };
 
@@ -63,10 +69,12 @@ class Controller {
       "url": null,
       "jwt": null,
       "jwk": null,
+      "page": null,
       "debug": false,
       "id": false,
       "barcode": false,
-      "page": null
+      "uploadpdf": false,
+      "flags": ``,
     };
   }
 
@@ -82,6 +90,7 @@ class Controller {
       }
       let page = (this.params.page) ? this.params.page : `page1`;
       this.displayPage(page);
+
       resolve();
     });
   }
@@ -91,13 +100,16 @@ class Controller {
       const queryString = window.location.search;
       console.log(queryString);
       const urlParams = new URLSearchParams(queryString);
-      this.params.debug = urlParams.get(`debug`) == `true`;
-      this.params.id = urlParams.get(`id`) == `true`;
-      this.params.barcode = urlParams.get(`barcode`) == `true`;
-      this.params.page = urlParams.get(`page`);
+      this.params.encrypt = urlParams.get(`encrypt`) == `true`;
       this.params.url = urlParams.get(`url`);
       this.params.jwt = urlParams.get(`jwt`);
-      this.params.encrypt = urlParams.get(`encrypt`) == `true`;
+      this.params.page = urlParams.get(`page`);
+      this.params.flags = (urlParams.get(`flags`) || this.params.flags).split(`,`);
+      this.params.debug = this.params.flags.includes(`debug`);
+      this.params.id = this.params.flags.includes(`id`);
+      this.params.barcode = this.params.flags.includes(`barcode`);
+      this.params.uploadpdf = this.params.flags.includes(`uploadpdf`);
+      this.params.uploadjson = this.params.flags.includes(`uploadjson`);
 
       resolve();
     });
@@ -126,9 +138,15 @@ class Controller {
   }
 
   displayPage(index) {
+    console.log(`>>>>>>>>>>>>>>>>>>> display ${index}`);
     for(let i in this.page) {
       this.page[i].object.vue.enabled = (i == index);
     }
+    if (this.params.uploadpdf && [`page2`, `page5`].includes(index))
+      $(document).ready(() => {
+        console.log(">>>>>>>>>>>>> Page2 ready");
+        this.page[index].object.upload();
+      });
   }
 
   loadPage(index) {

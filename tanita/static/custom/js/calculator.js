@@ -3,6 +3,29 @@ export default class Calculator {
 
   }
 
+  bmiCal(bmi) {
+    console.log(`Calculator: bmiCal(${bmi})`);
+    return new Promise((resolve, reject) => {
+      let define;
+      Promise.resolve()
+        .then(() => this.loadJson(`static/custom/json/bmi.json`))
+        .then((def) => define = def)
+        .then(() => this.rangeFinding(Number(bmi).toFixed(1), define.list))
+        .then((res) => {
+          return {
+            summary: res.value,
+            range: {
+              lower: res.lowerIndex,
+              upper: res.upperIndex,
+            },
+            desirable: define.metadata.desirable,
+          };
+        })
+        .then((res) => resolve(res))
+        .catch((err) => reject(err));
+    })
+  }
+
   weightCal(gender, height, weight) {
     console.log(`Calculator: weightCal(${gender}, ${height}, ${weight}) >> `);
     return new Promise(async (resolve, reject) => {
@@ -103,5 +126,15 @@ export default class Calculator {
       console.log(`currDiff: ${currDiff} / diff: ${diff} / resultIndex: ${resultIndex}`);
     });
     return arr.find((elem) => elem.index == resultIndex);
+  }
+
+  rangeFinding(index, arr) {
+    return arr.find((elem) => {
+      if (elem.upperIndex && index > elem.upperIndex)
+        return false;
+      if (elem.lowerIndex && index < elem.lowerIndex)
+        return false;
+      return true;
+    });
   }
 }

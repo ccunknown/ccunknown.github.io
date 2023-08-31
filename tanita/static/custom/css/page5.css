@@ -1,0 +1,257 @@
+/***  Report data row  ***/
+.page5-report .data-row {
+
+}
+
+/***  Tanita Chart  ***/
+.tanita-chart {
+    position: relative;
+    width: fit-content;
+    font-size: 1.2rem
+}
+
+.tanita-chart div {
+    position: absolute;
+}
+
+/*** Tanita Detail ***/
+.tanita-chart-detail-svg {
+    height: 300px;
+}
+.tanita-chart-detail-body-weight {
+    top: 34px;
+    right: 340px;
+}
+.tanita-chart-detail-fat-percent {
+    top: 70px;
+    right: 340px;
+}
+.tanita-chart-detail-fat-mass {
+    top: 109px;
+    right: 340px;
+}
+.tanita-chart-detail-muscle-mass {
+    top: 148px;
+    right: 340px;
+}
+.tanita-chart-detail-bone-mass {
+    top: 187px;
+    right: 340px;
+}
+.tanita-chart-detail-bmi {
+    top: 225px;
+    right: 340px;
+}
+.tanita-chart-detail-metabolic-age {
+    top: 264px;
+    right: 340px;
+}
+
+/*** Tanita Physique Rating ***/
+.tanita-chart-physique-rating-svg {
+    height: 300px;
+}
+
+/*** Tanita TBW ***/
+.tanita-chart-tbw-svg {
+    height: 60px;
+}
+.tanita-chart-tbw-kg {
+    top: 2px;
+    right: 275px;
+}
+.tanita-chart-tbw-percent {
+    top: 27px;
+    right: 275px;
+}
+.tanita-chart-tbw-ecw-kg {
+    top: 16px;
+    right: 152px;
+}
+.tanita-chart-tbw-icw-kg {
+    top: 16px;
+    right: 33px;
+}
+
+/*** Tanita ECW per TBW ***/
+.tanita-chart-ecw-tbw-svg {
+    height: 60px;
+}
+.tanita-chart-ecwpertbw-percent {
+    top: 15px;
+    right: 275px;
+}
+.tanita-chart-ecwpertbw-gauge {
+    top: 13px;
+    left: 205px;
+    display: flex;
+    flex-direction: row;
+    gap: 2px;
+}
+.tanita-chart-ecwpertbw-gauge-bar {
+    background-color: var(--tanita-light-gray);
+    border-radius: 0.15rem;
+    width: 12.5px;
+    height: 17px;
+    position: relative !important;
+}
+.tanita-chart-ecwpertbw-gauge-bar.active {
+    background-color: black;
+}
+
+/***  Tanita BMR  ***/
+.tanita-chart-bmr-svg {
+    height: 60px;
+}
+.tanita-chart-bmr-kj {
+    top: 2px;
+    right: 286px;
+}
+.tanita-chart-bmr-kcal {
+    top: 28px;
+    right: 286px;
+}
+.tanita-chart-bmr-gauge {
+    top: 10px;
+    left: 228.5px;
+    display: flex;
+    flex-direction: row;
+    gap: 2px;
+}
+.tanita-chart-bmr-gauge-bar {
+    background-color: var(--tanita-light-gray);
+    border-radius: 0.15rem;
+    width: 12.5px;
+    height: 17px;
+    position: relative !important;
+}
+.tanita-bmr-bar-under {
+    background-color: var(--tanita-light-blue);
+}
+.tanita-bmr-bar-normal {
+    background-color: var(--tanita-light-green);
+}
+.tanita-bmr-bar-more {
+    background-color: var(--tanita-light-pink);
+}
+:is(.tanita-bmr-bar-under, .tanita-bmr-bar-normal, .tanita-bmr-bar-more).active {
+    background-color: black;
+}
+
+/*** Tanita VFR ***/
+.tanita-chart-vfr-svg {
+    height: 60px;
+}
+.tanita-chart-vfr-rating {
+    top: 17px;
+    right: 293px;
+}
+.tanita-chart-vfr-gauge {
+    top: 14px;
+    left: 228.5px;
+    display: flex;
+    flex-direction: row;
+    gap: 2px;
+}
+.tanita-chart-vfr-gauge-bar {
+    background-color: var(--tanita-light-gray);
+    border-radius: 0.15rem;
+    width: 12.5px;
+    height: 17px;
+    position: relative !important;
+}
+.tanita-vfr-bar-avg {
+    background-color: var(--tanita-light-blue);
+}
+.tanita-vfr-bar-high {
+    background-color: var(--tanita-light-yellow);
+}
+.tanita-vfr-bar-vhigh {
+    background-color: var(--tanita-light-red);
+}
+:is(.tanita-vfr-bar-avg, .tanita-vfr-bar-high, .tanita-vfr-bar-vhigh).active {
+    background-color: black;
+}
+
+/*** Tanita Muscle Mass ***/
+.tanita-chart-muscle-svg {
+    height: 334px;
+}
+.tanita-chart-trunk-muscle-mass {
+    top: 60px;
+    right: 205px;
+}
+.tanita-chart-arml-muscle-mass {
+    top: 130px;
+    right: 350px;
+}
+.tanita-chart-armr-muscle-mass {
+    top: 130px;
+    right: 65px;
+}
+.tanita-chart-legl-muscle-mass {
+    top: 288px;
+    right: 350px;
+}
+.tanita-chart-legr-muscle-mass {
+    top: 288px;
+    right: 65px;
+}
+
+/*** Tanita Fat ***/
+.tanita-chart-fat-svg {
+    height: 334px;
+}
+
+.tanita-chart-trunk-fat-percent {
+    top: 60px;
+    right: 205px;
+}
+.tanita-chart-arml-fat-percent {
+    top: 130px;
+    right: 350px;
+}
+.tanita-chart-armr-fat-percent {
+    top: 130px;
+    right: 65px;
+}
+.tanita-chart-legl-fat-percent {
+    top: 288px;
+    right: 350px;
+}
+.tanita-chart-legr-fat-percent {
+    top: 288px;
+    right: 65px;
+}
+
+.tanita-chart-trunk-fat-mass {
+    top: 45px;
+    right: 200px;
+    font-size: 0.8rem;
+}
+.tanita-chart-arml-fat-mass {
+    top: 155px;
+    right: 340px;
+    font-size: 0.8rem;
+}
+.tanita-chart-armr-fat-mass {
+    top: 155px;
+    right: 55px;
+    font-size: 0.8rem;
+}
+.tanita-chart-legl-fat-mass {
+    top: 270px;
+    right: 340px;
+    font-size: 0.8rem;
+}
+.tanita-chart-legr-fat-mass {
+    top: 270px;
+    right: 55px;
+    font-size: 0.8rem;
+}
+
+@element body and (min-width: 1200px) {
+    .page5-report .container {
+        max-width: 960px !important;
+    }
+}

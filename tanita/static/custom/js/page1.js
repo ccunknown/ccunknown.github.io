@@ -235,7 +235,8 @@ export default class Page1 {
   }
 
   nextPage() {
-    this.controller.displayPage(`page2`);
+    // this.controller.displayPage(`page2`);
+    this.controller.displayPage(`page5`);
     this.controller.page.page2.object.translate();
   }
 }

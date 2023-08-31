@@ -1,4 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="42.51 457.4 258.8 189.36">
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  version="1.1"
+  viewBox="42.51 457.4 258.8 189.36"
+  height="60"
+>
   <!-- table -->
   <g>
     <path xmlns="http://www.w3.org/2000/svg" transform="matrix(1,0,0,-1,51.0098,457.3959)" d="M 0 0 C -4.677 0 -8.504 -3.827 -8.504 -8.504 L -8.504 -180.853 C -8.504 -185.529 -4.677 -189.356 0 -189.356 L 241.795 -189.356 C 246.472 -189.356 250.299 -185.529 250.299 -180.853 L 250.299 -8.504 C 250.299 -3.827 246.472 0 241.795 0 Z " fill="#00bdf2"></path>

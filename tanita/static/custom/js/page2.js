@@ -113,6 +113,12 @@ export default class Page2 {
         "legLMuscleMass": measure[`[Left Leg] Muscle mass`],
         "legRMuscleMass": measure[`[Right Leg] Muscle mass`],
         "trunkMuscleMass": measure[`[Trunk] Muscle mass`],
+
+        "armLFatPercent": measure[`[Left Arm] Fat %`],
+        "armRFatPercent": measure[`[Right Arm] Fat %`],
+        "legLFatPercent": measure[`[Left Leg] Fat %`],
+        "legRFatPercent": measure[`[Right Leg] Fat %`],
+        "trunkFatPercent": measure[`[Trunk] Fat %`],
         
         "armLFatMass": measure[`[Left Arm] Fat mass`],
         "armRFatMass": measure[`[Right Arm] Fat mass`],

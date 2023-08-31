@@ -1,8 +1,35 @@
 {
   "metadata": {
-    "description": ""
+    "description": "",
+    "default": "BMI out of range",
+    "desirable": {
+      "min": 18.5,
+      "max": 22.9
+    }
   },
   "list": [
-    {}
+    {
+      "upperIndex": 18.4,
+      "value": "Thin"
+    },
+    {
+      "lowerIndex": 18.5,
+      "upperIndex": 22.9,
+      "value": "Standard"
+    },
+    {
+      "lowerIndex": 23,
+      "upperIndex": 24.9,
+      "value": "Over Weight"
+    },
+    {
+      "lowerIndex": 25,
+      "upperIndex": 29.9,
+      "value": "Obesity"
+    },
+    {
+      "lowerIndex": 30,
+      "value": "Very Obesity"
+    }
   ]
 }

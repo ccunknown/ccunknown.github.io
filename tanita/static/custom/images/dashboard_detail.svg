@@ -1,4 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="42.52 166.84 304.66 170.08">
+<svg
+	xmlns="http://www.w3.org/2000/svg"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	version="1.1"
+	viewBox="42.52 166.84 304.66 170.08"
+	height="300"
+>
 	<!-- table -->
 	<g name="table">
 		<path xmlns="http://www.w3.org/2000/svg" transform="matrix(1,0,0,-1,46.7676,166.84119)" d="M 0 0 C -2.338 0 -4.252 -1.914 -4.252 -4.252 L -4.252 -165.828 C -4.252 -168.167 -2.338 -170.08 0 -170.08 L 296.154 -170.08 C 298.492 -170.08 300.406 -168.167 300.406 -165.828 L 300.406 -4.252 C 300.406 -1.914 298.492 0 296.154 0 Z " fill="#b19aca"></path>
@@ -13,10 +19,12 @@
 		<path xmlns="http://www.w3.org/2000/svg" transform="matrix(1,0,0,-1,0,841.89)" d="M 346.551 637.715 L 43.649995 637.715 L 43.649995 638.281 L 346.551 638.281 Z " fill="#b19aca"></path>
 		<path xmlns="http://www.w3.org/2000/svg" transform="matrix(1,0,0,-1,0,841.89)" d="M 346.551 659.744 L 43.649995 659.744 L 43.649995 660.31 L 346.551 660.31 Z " fill="#b19aca"></path>
 		<path xmlns="http://www.w3.org/2000/svg" transform="matrix(1,0,0,-1,0,841.89)" d="M 347.174 659.735 L 43.650026 659.735 L 43.650026 660.868 L 347.174 660.868 Z " fill="#b19aca"></path>
-				<path xmlns="http://www.w3.org/2000/svg" transform="matrix(1,0,0,-1,0,841.89)" d="M 178.244 506.105 L 179.095 506.105 L 179.095 673.918 L 178.244 673.918 Z " fill="#ffffff"></path>
+		
+		<path xmlns="http://www.w3.org/2000/svg" transform="matrix(1,0,0,-1,0,841.89)" d="M 178.244 506.105 L 179.095 506.105 L 179.095 673.918 L 178.244 673.918 Z " fill="#ffffff"></path>
 		<path xmlns="http://www.w3.org/2000/svg" transform="matrix(1,0,0,-1,0,841.89)" d="M 177.667 505.824 L 178.23401 505.824 L 178.23401 674.482 L 177.667 674.482 Z " fill="#b19aca"></path>
 		<path xmlns="http://www.w3.org/2000/svg" transform="matrix(1,0,0,-1,0,841.89)" d="M 179.095 505.824 L 179.662 505.824 L 179.662 674.482 L 179.095 674.482 Z " fill="#b19aca"></path>
-				<path xmlns="http://www.w3.org/2000/svg" transform="matrix(1,0,0,-1,0,841.89)" d="M 247.253 506.105 L 248.104 506.105 L 248.104 673.918 L 247.253 673.918 Z " fill="#ffffff"></path>
+		
+		<path xmlns="http://www.w3.org/2000/svg" transform="matrix(1,0,0,-1,0,841.89)" d="M 247.253 506.105 L 248.104 506.105 L 248.104 673.918 L 247.253 673.918 Z " fill="#ffffff"></path>
 		<path xmlns="http://www.w3.org/2000/svg" transform="matrix(1,0,0,-1,0,841.89)" d="M 246.692 505.824 L 247.259 505.824 L 247.259 674.482 L 246.692 674.482 Z " fill="#b19aca"></path>
 		<path xmlns="http://www.w3.org/2000/svg" transform="matrix(1,0,0,-1,0,841.89)" d="M 248.104 505.824 L 248.671 505.824 L 248.671 674.482 L 248.104 674.482 Z " fill="#b19aca"></path>
 		<path xmlns="http://www.w3.org/2000/svg" transform="matrix(1,0,0,-1,0,841.89)" d="M 296.292 505.824 L 296.85899 505.824 L 296.85899 674.482 L 296.292 674.482 Z " fill="#b19aca"></path>
