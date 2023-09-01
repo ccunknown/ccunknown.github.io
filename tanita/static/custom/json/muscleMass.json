@@ -3,8 +3,7 @@
     "description": "",
     "primaryIndex": "gender",
     "secondaryIndex": "age",
-    "tertiaryIndex": "valuePercent",
-    "desireableVal": "Healthy"
+    "tertiaryIndex": "valuePercent"
   },
   "list": [
     {
@@ -12,14 +11,14 @@
       "description": "male",
       "value": [
         {
-          "index": 5,
+          "index": 18,
           "value": [
             {
-              "index": 11,
-              "value": "Underfat"
+              "index": 82,
+              "value": "High"
             },
             {
-              "index": 12,
+              "index": 81,
               "value": "Healthy"
             },
             {
@@ -41,7 +40,7 @@
           ]
         },
         {
-          "index": 6,
+          "index": 29,
           "value": [
             {
               "index": 11,

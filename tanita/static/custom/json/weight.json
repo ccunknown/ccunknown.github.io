@@ -1,4 +1,11 @@
 {
+  "metadata": {
+    "description": "",
+    "primaryIndex": "gender",
+    "secondaryIndex": "height",
+    "tertiaryIndex": "weight",
+    "desirableVal": "Healthy"
+  },
   "list": [
     {
       "index": 1,

@@ -42,6 +42,14 @@
 
         <div class="d-flex flex-column">
 
+          <div v-if="idmode" class="card-item-row">
+            <span>
+              <i class="fas fa-code"></i>
+            </span>
+            <span>ID: </span>
+            <span>{{measure.id.value}}</span>
+          </div>
+
           <div class="card-item-row">
             <span>
               <i class="fas fa-user"></i>
@@ -108,11 +116,13 @@
           height="300px"
         >
         <div class="font-weight-bold tanita-chart-detail-body-weight">{{measure.weight.value.toFixed(1)}}</div>
+        <div class="font-weight-bold tanita-chart-detail-body-weight-desire">{{evaluate.weight.suit.word}}</div>
         <div class="font-weight-bold tanita-chart-detail-fat-percent">{{measure.fatPercent.value.toFixed(1)}}</div>
         <div class="font-weight-bold tanita-chart-detail-fat-mass">{{measure.fatMass.value.toFixed(1)}}</div>
         <div class="font-weight-bold tanita-chart-detail-muscle-mass">{{measure.muscleMass.value.toFixed(1)}}</div>
         <div class="font-weight-bold tanita-chart-detail-bone-mass">{{measure.boneMass.value.toFixed(1)}}</div>
         <div class="font-weight-bold tanita-chart-detail-bmi">{{measure.bmi.value.toFixed(1)}}</div>
+        <div class="font-weight-bold tanita-chart-detail-bmi-desire">{{evaluate.bmi.suit.word}}</div>
         <div class="font-weight-bold tanita-chart-detail-metabolic-age">{{measure.metabolicAge.value}}</div>
       </div>
       <!-- Physique Rating -->

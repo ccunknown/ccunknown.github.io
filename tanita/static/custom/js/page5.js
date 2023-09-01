@@ -82,6 +82,7 @@ export default class Page5 {
     return new Promise(async (resolve, reject) => {
       //  Measurement mapping
       let measure = this.controller.params.measurement;
+      this.vue.idmode = this.controller.params.id;
       this.vue.uploading = false;
       this.vue.measure = {
         //  Primary Data

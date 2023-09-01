@@ -1,24 +1,51 @@
 {
   "metadata": {
-    "description": ""
+    "description": "",
+    "primaryIndex": "gender",
+    "secondaryIndex": "weight"
   },
   "list": [
     {
       "index": 1,
       "value": [
         {
-          "index": 64.8,
-          "value": [
-            {
-              "index": 
-            }
-          ]
+          "index": 64.9,
+          "value": 2.66
+        },
+        {
+          "index": 65,
+          "value": 3.29
+        },
+        {
+          "index": 95,
+          "value": 3.29
+        },
+        {
+          "index": 95.1,
+          "value": 3.69
         }
       ]
     },
     {
       "index": 2,
-      "value": "อัตราการเผาผลาญพลังงานปกติ : 900 - 1500 kcal"
+      "value": [
+        {
+          "index": 49.9,
+          "value": 1.95
+        },
+        {
+          "index": 50,
+          "value": 2.4
+        },
+        {
+          "index": 75,
+          "value": 2.4
+        },
+        {
+          "index": 75.1,
+          "value": 2.95
+        }
+      ]
     }
   ]
 }
