@@ -39,11 +39,8 @@ export default class Calculator {
           hDefine = this.getClosest((gender == `male`) ? 1 : 2, define.list);
           wDefine = this.getClosest(height, hDefine.value);
           const res = this.getClosest(weight, wDefine.value);
-          console.log(`res: `, res);
           const resultArr = wDefine.value.filter(e => e.value === res.value);
-          console.log(`resultArr: `, resultArr);
           const suitArr = wDefine.value.filter(e => e.value === define.metadata.desirableVal);
-          console.log(`suitArr: `, suitArr);
           return {
             result: this.renderSummary(resultArr, wDefine.value),
             suit: this.renderSummary(suitArr, wDefine.value),
@@ -53,53 +50,44 @@ export default class Calculator {
         .catch((err) => reject(err));
     });
   }
-  // weightCal(gender, height, weight) {
-  //   console.log(`Calculator: weightCal(${gender}, ${height}, ${weight}) >> `);
-  //   return new Promise(async (resolve, reject) => {
-  //     let define = await this.loadJson(`static/custom/json/weight.json`);
-  //     let hDefine = this.getClosest((gender == `male`) ? 1 : 2, define.list);
-  //     //console.log(`hDefine: ${JSON.stringify(hDefine, null, 2)}`);
-  //     let wDefine = this.getClosest(height, hDefine.value);
-  //     //console.log(`wDefine: ${JSON.stringify(wDefine, null, 2)}`);
-  //     let summary = this.getClosest(weight, wDefine.value).value;
-  //     let rangeArr = [];
-  //     wDefine.value.forEach((elem) => {
-  //       if(elem.value == `Healthy`)
-  //         rangeArr.push(elem.index);
-  //     });
-  //     let min = Math.min.apply(Math, rangeArr);
-  //     let max = Math.max.apply(Math, rangeArr);
-  //     let result = {
-  //       "summary": summary,
-  //       "min": (wDefine.value.find((elem) => elem.value == `Underweight`)) ? min : null,
-  //       "max": (wDefine.value.find((elem) => elem.value == `Overweight`)) ? max : null
-  //     }
-  //     resolve(result);
-  //   });
-  // }
 
   fatPercentCal(gender, age, fatPercent) {
     console.log(`Calculator: fatPercentCal(${gender}, ${age}, ${fatPercent}) >> `);
     return new Promise(async (resolve, reject) => {
-      let define = await this.loadJson(`static/custom/json/fatPercent.json`);
-      let aDefine = this.getClosest((gender == `male`) ? 1 : 2, define.list);
-      //console.log(`aDefine: ${JSON.stringify(aDefine, null, 2)}`);
-      let fpDefine = this.getClosest(age, aDefine.value);
-      //console.log(`fpDefine: ${JSON.stringify(fpDefine, null, 2)}`);
-      let summary = this.getClosest(fatPercent, fpDefine.value).value;
-      let rangeArr = [];
-      fpDefine.value.forEach((elem) => {
-        if(elem.value == `Healthy`)
-          rangeArr.push(elem.index);
-      });
-      let min = Math.min.apply(Math, rangeArr);
-      let max = Math.max.apply(Math, rangeArr);
-      let result = {
-        "summary": summary,
-        "min": (fpDefine.value.find((elem) => elem.value == `Underfat`)) ? min : null,
-        "max": (fpDefine.value.find((elem) => elem.value == `Overfat`)) ? max : null
-      }
-      resolve(result);
+      let define, aDefine, fDefine;
+      Promise.resolve()
+        .then(() => this.loadJson(`static/custom/json/fatPercent.json`))
+        .then((def) => define = def)
+        .then(() => {
+          aDefine = this.getClosest((gender == `male`) ? 1 : 2, define.list);
+          fDefine = this.getClosest(age, aDefine.value);
+          const res = this.getClosest(fatPercent, fDefine.value);
+          const resultArr = fDefine.value.filter(e => e.value === res.value);
+          const suitArr = fDefine.value.filter(e => e.value === define.metadata.desirableVal);
+          return {
+            result: this.renderSummary(resultArr, fDefine.value),
+            suit: this.renderSummary(suitArr, fDefine.value),
+          };
+        })
+        .then((res) => resolve(res))
+        .catch((err) => reject(err));
+    });
+  }
+
+  fatMassCal(gender, age, fatPercent, weight) {
+    console.log(`Calculator: fatMassCal(${gender}, ${age}, ${fatPercent}, ${weight})`);
+    return new Promise(async (resolve, reject) => {
+      Promise.resolve()
+        .then(() => this.fatPercentCal(gender, age, fatPercent))
+        .then((fat) => {
+          const fatMass = {
+            result: this.ampSummary(fat.result, weight/100),
+            suit: this.ampSummary(fat.suit, weight/100),
+          };
+          return fatMass;
+        })
+        .then((res) => resolve(res))
+        .catch((err) => reject(err));
     });
   }
 
@@ -187,28 +175,50 @@ export default class Calculator {
       elemArr.length > 1
       ? Math.max(...(elemArr.map(e => e.index)))
       : this.isLowest(elemArr[0].index, defineArr) ? elemArr[0].index : null;
+    // let word;
+    // if (min != null && max != null) word = `${min} - ${max}`;
+    // else if (min === null) word = `< ${max}`;
+    // else if (max === null) word = `> ${min}`;
+    return {
+      value: elemArr[0].value,
+      word: this.generateWord(min, max),
+      range: { min, max },
+    }
+  }
+
+  generateWord(min, max) {
     let word;
     if (min != null && max != null) word = `${min} - ${max}`;
     else if (min === null) word = `< ${max}`;
     else if (max === null) word = `> ${min}`;
-    return {
-      value: elemArr[0].value,
-      word: word,
-      range: { min, max },
-    }
+    return word;
+  }
+
+  ampSummary(sum, amp) {
+    const rmin = sum.range.min;
+    const rmax = sum.range.max;
+    const res = {
+      "value": sum.value,
+      "range": {
+        "min": rmin ? (rmin * amp).toFixed(1) : rmin,
+        "max": rmax ? (rmax * amp).toFixed(1) : rmax,
+      },
+    };
+    res.word = this.generateWord(res.range.min, res.range.max);
+    return res;
   }
 
   getClosest(index, arr) {
     let diff = null;
     let resultIndex;
-    console.log(`index: ${index}`);
+    // console.log(`index: ${index}`);
     arr.forEach((elem) => {
       let currDiff = Math.abs(index - elem.index);
       if(diff == null || diff > currDiff) {
         resultIndex = elem.index;
         diff = currDiff;
       }
-      console.log(`currDiff: ${currDiff} / diff: ${diff} / resultIndex: ${resultIndex}`);
+      // console.log(`currDiff: ${currDiff} / diff: ${diff} / resultIndex: ${resultIndex}`);
     });
     return arr.find((elem) => elem.index == resultIndex);
   }

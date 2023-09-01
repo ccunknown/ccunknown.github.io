@@ -134,17 +134,23 @@ export default class Page5 {
       //  Get statistic
       let evaluate = {};
       evaluate.weight = await this.calculator.weightCal(this.vue.measure.gender.value, this.vue.measure.height.value, this.vue.measure.weight.value);
-      evaluate.weightSuit = (evaluate.weight.min && evaluate.weight.max) ? `${evaluate.weight.min} - ${evaluate.weight.max}` : 
-        (evaluate.weight.max) ? `< ${evaluate.weight.max}` : 
-        (evaluate.weight.min) ? `> ${evaluate.weight.min}` : `?`;
+      // evaluate.weightSuit = (evaluate.weight.min && evaluate.weight.max) ? `${evaluate.weight.min} - ${evaluate.weight.max}` : 
+      //   (evaluate.weight.max) ? `< ${evaluate.weight.max}` : 
+      //   (evaluate.weight.min) ? `> ${evaluate.weight.min}` : `?`;
       evaluate.fatPercent = await this.calculator.fatPercentCal(this.vue.measure.gender.value, this.vue.measure.age.value, this.vue.measure.fatPercent.value);
-      evaluate.fatPercentSuit = (evaluate.fatPercent.max && evaluate.fatPercent.max) ? `${evaluate.fatPercent.min} - ${evaluate.fatPercent.max}` : 
-        (evaluate.fatPercent.max) ? `< ${evaluate.fatPercent.max}` : 
-        (evaluate.fatPercent.min) ? `> ${evaluate.fatPercent.min}` : `?`;
-      evaluate.vfr = await this.calculator.vfrCal(this.vue.measure.vfr.value);
-      evaluate.bmr = await this.calculator.bmrCal(this.vue.measure.bmrKCal.value);
+      evaluate.fatMass = await this.calculator.fatMassCal(
+        this.vue.measure.gender.value, 
+        this.vue.measure.age.value, 
+        this.vue.measure.fatPercent.value,
+        this.vue.measure.weight.value
+      );
+      // evaluate.fatPercentSuit = (evaluate.fatPercent.max && evaluate.fatPercent.max) ? `${evaluate.fatPercent.min} - ${evaluate.fatPercent.max}` : 
+      //   (evaluate.fatPercent.max) ? `< ${evaluate.fatPercent.max}` : 
+      //   (evaluate.fatPercent.min) ? `> ${evaluate.fatPercent.min}` : `?`;
+      // evaluate.vfr = await this.calculator.vfrCal(this.vue.measure.vfr.value);
+      // evaluate.bmr = await this.calculator.bmrCal(this.vue.measure.bmrKCal.value);
       evaluate.bmi = await this.calculator.bmiCal(this.vue.measure.bmi.value);
-      evaluate.ecwPercent = await this.calculator.ecwPercentCal(this.vue.measure.ecwPercent.value);
+      // evaluate.ecwPercent = await this.calculator.ecwPercentCal(this.vue.measure.ecwPercent.value);
 
       this.vue.evaluate = evaluate;
       console.log(`evalueate: `, this.vue.evaluate);

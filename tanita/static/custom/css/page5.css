@@ -31,17 +31,37 @@
     top: 70px;
     right: 340px;
 }
+.tanita-chart-detail-fat-percent-desire {
+    top: 73px;
+    right: 210px;
+    font-size: 1rem;
+}
 .tanita-chart-detail-fat-mass {
     top: 109px;
     right: 340px;
+}
+.tanita-chart-detail-fat-mass-desire {
+    top: 112px;
+    right: 210px;
+    font-size: 1rem;
 }
 .tanita-chart-detail-muscle-mass {
     top: 148px;
     right: 340px;
 }
+.tanita-chart-detail-muscle-mass-desire {
+    top: 151px;
+    right: 210px;
+    font-size: 1rem;
+}
 .tanita-chart-detail-bone-mass {
     top: 187px;
     right: 340px;
+}
+.tanita-chart-detail-bone-mass-desire {
+    top: 190px;
+    right: 210px;
+    font-size: 1rem;
 }
 .tanita-chart-detail-bmi {
     top: 225px;
