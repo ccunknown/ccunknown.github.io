@@ -63,6 +63,18 @@ app.post('/uploadjson', upload.single('file'), function (req, res) {
   res.status(201).json(req.file);
 });
 
+app.get(`/list`, (req, res) => {
+  const queryPath = req.query.path || `custom/json`;
+  // console.log(`params: `, req.query);
+  const dir = path.join(`./static`, queryPath);
+  fs.readdir(dir, (err, files) => {
+    if (err) {
+      return res.status(500).json({ error: 'Error reading directory' });
+    }
+    res.json({ files });
+  });
+});
+
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });
