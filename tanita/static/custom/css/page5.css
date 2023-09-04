@@ -1,6 +1,17 @@
 /***  Report data row  ***/
 .page5-report .data-row {
+    
+}
 
+/***  Report data row  ***/
+.page5-uploading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+    background-color: rgba(0,0,0,0.5);
 }
 
 /*** Tanita Data Set ***/
@@ -31,7 +42,7 @@
 }
 
 /*** Basic Info ***/
-.tanita-basic-container {
+.tanita-basic-container, .tanita-chart-container {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -386,7 +397,7 @@
 }
 
 @element body and (min-width: 960px) {
-    .tanita-basic-container {
+    .tanita-basic-container, .tanita-chart-container {
         flex-direction: row;
         justify-content: space-between;
         align-items: start;

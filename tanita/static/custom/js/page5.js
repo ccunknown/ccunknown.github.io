@@ -26,6 +26,7 @@ export default class Page5 {
         "data": {
           "enabled": false,
           "debug": this.controller.params.debug,
+          "uploading": false,
           "measure": {},
           "statistic": {},
           "evaluate": {},
@@ -83,7 +84,6 @@ export default class Page5 {
       //  Measurement mapping
       let measure = this.controller.params.measurement;
       this.vue.idmode = this.controller.params.id;
-      this.vue.uploading = false;
       this.vue.measure = {
         //  Primary Data
         "name": this.controller.params.primaryData.name,
@@ -201,14 +201,17 @@ export default class Page5 {
     uploadJson = this.controller.params.uploadjson,
   ) {
     console.log(`upload(pdf:${uploadPdf},json:${uploadJson})`);
+    this.translate();
     if (!uploadPdf && !uploadJson)
       return Promise.resolve();
     let pdfBlob = null;
     let jsonBlob = null;
     return new Promise((resolve, reject) => {
       Promise.resolve()
+        // .then(() => this.wait(1))
         .then(() => this.vue.uploading = true)
-        .then(() => this.wait(3))
+        // .then(() => $(document).ready)
+        // .then(() => this.wait(3))
         .then(() => uploadPdf ? this.craftBlobPdf() : null)
         .then((blob) => pdfBlob = blob)
         .then(() => uploadJson ? this.craftBlobJson() : null)
