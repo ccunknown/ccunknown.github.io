@@ -355,6 +355,69 @@ textarea.badge-union {
   cursor: pointer;
 }
 
+.page-header {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+}
+
+.page-footer {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+}
+
+/***  Report data row  ***/
+.overlay-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay-progress-box {
+  border-radius: 0.25rem;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  padding-left: 36px;
+  padding-right: 36px;
+  background-color: rgba(0,0,0,0.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.overlay-progress-bar {
+  width: 100%;
+  max-width: 300px;
+  min-width:250px;
+  height: 15px;
+  border-radius: 0.25rem;
+  border: black 2px solid;
+  opacity: 1;
+}
+
+.overlay-progress-text {
+  color: gray;
+  opacity: 1;
+  font-weight: 700;
+}
+
+.footer-copyright {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 @element body and (min-width: 576px) {
   .container {
     max-width: 540px !important;

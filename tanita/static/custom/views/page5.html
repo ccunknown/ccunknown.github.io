@@ -29,7 +29,7 @@
   <div
     id="page5-report-container"
     class="
-      container v-container justify-content-center align-items-center
+      page5-report-container v-container justify-content-center align-items-center
       p-3 gap-3
     "
   >
@@ -304,6 +304,7 @@
   </div>
 
 </div>
+<div style="height: 45px"></div>
 
 <div v-if="debug">
   <pre><code>measure: {{measure}}</code></pre>
@@ -328,12 +329,16 @@
     </div>
 
     <!-- Copyright -->
-    <div class="footer-copyright text-center">© 2020 Copyright:
-      <a href=""> NECTEC </a>
+    <div class="footer-copyright text-center">
+      <span>© 2020 Copyright:</span>
+      <a href="" class="text-dark"> NECTEC </a>
     </div>
     <!-- Copyright -->
 
     <div>
+      <button class="btn btn-warning" @click="fn.infoPage()">
+        <i class="fas fa-search"></i>
+      </button>
       <button class="btn btn-warning" @click="fn.homePage()">
         <i class="fas fa-home"></i>
       </button>
@@ -343,5 +348,15 @@
 </footer>
 
 <!-- Uploading overlay -->
-<div class="page5-uploading-overlay" :class="{ 'd-none': !uploading }">
+<div class="overlay-backdrop" :class="{ 'd-none': !uploading }">
+  <div class="overlay-progress-box">
+    <div
+      class="
+        progress-bar progress-bar-black-striped bg-warning progress-bar-animated
+        overlay-progress-bar
+      "
+    >
+    </div>
+    <span class="overlay-progress-text">Uploading</span>
+  </div>
 </div>

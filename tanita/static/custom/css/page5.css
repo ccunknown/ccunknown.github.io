@@ -1,17 +1,18 @@
-/***  Report data row  ***/
-.page5-report .data-row {
-    
+/*** Report container ***/
+.page5-report, .page5-hidden-report {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-/***  Report data row  ***/
-.page5-uploading-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 100;
-    background-color: rgba(0,0,0,0.5);
+.page5-report-container {
+    max-width: 980px;
+}
+
+/*** Report data row ***/
+.page5-report .data-row {
+    
 }
 
 /*** Tanita Data Set ***/
@@ -44,6 +45,7 @@
 /*** Basic Info ***/
 .tanita-basic-container, .tanita-chart-container {
     width: 100%;
+    /* min-width:940px; */
     display: flex;
     flex-direction: column;
     /* justify-content: space-between; */
@@ -392,11 +394,11 @@
 
 @element body and (min-width: 1200px) {
     .page5-report .container {
-        max-width: 960px !important;
+        max-width: 980px !important;
     }
 }
 
-@element body and (min-width: 960px) {
+@element body and (min-width: 980px) {
     .tanita-basic-container, .tanita-chart-container {
         flex-direction: row;
         justify-content: space-between;

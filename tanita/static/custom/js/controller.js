@@ -28,7 +28,12 @@ class Controller {
         "view": "static/custom/views/page5.html",
         "viewId": "page5-workspace",
         "js": "static/custom/js/page5.js"
-      }
+      },
+      "page6": {
+        "view": "static/custom/views/page6.html",
+        "viewId": "page6-workspace",
+        "js": "static/custom/js/page6.js"
+      },
     };
 
     this.component = {
@@ -163,5 +168,12 @@ class Controller {
       await this.page[index].object.init();
       resolve();
     });
+  }
+
+  homePage() {
+    Promise.resolve()
+      .then(() => this.initParams())
+      .then(() => this.page.page1.object.preset())
+      .then(() => this.displayPage(`page1`));
   }
 }

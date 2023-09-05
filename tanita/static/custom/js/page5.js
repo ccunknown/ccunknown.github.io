@@ -61,8 +61,11 @@ export default class Page5 {
           let result = `${year}-${month}-${day} ${hour}:${minute}`;
           return result;
         },
+        "infoPage": () => {
+          this.infoPage();
+        },
         "homePage": () => {
-          this.homePage();
+          this.controller.homePage();
         }
       };
 
@@ -159,9 +162,8 @@ export default class Page5 {
     });
   }
 
-  homePage() {
-    this.controller.page.page1.object.preset();
-    this.controller.displayPage(`page1`);
+  infoPage() {
+    this.controller.displayPage(`page6`);
   }
 
   print(target) {
@@ -218,8 +220,14 @@ export default class Page5 {
         .then((blob) => jsonBlob = blob)
         .then(() => {
           const data = new FormData();
-          pdfBlob && data.append(`file`, pdfBlob, this.craftFileName());
-          jsonBlob && data.append(`file`, jsonBlob, this.craftFileName(`json`));
+          if (pdfBlob) {
+            data.append(`file`, pdfBlob, this.craftFileName());
+            this.controller.params.uploadpdf = false;
+          }
+          if (jsonBlob) {
+            data.append(`file`, jsonBlob, this.craftFileName(`json`));
+            this.controller.params.uploadjson = false;
+          }
           return data;
         })
         .then((payload) => this.fetchRetry(

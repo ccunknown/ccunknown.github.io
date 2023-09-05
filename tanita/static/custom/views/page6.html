@@ -1,0 +1,38 @@
+<div class="page6-container">
+  <!-- File Panel -->
+  <div class="page6-files-container">
+    <div v-for="item in fileList">
+      <span @click="fn.translate(item)">
+        {{item}}
+      </span>
+    </div>
+  </div>
+  <!-- Chart -->
+  <div class="page6-chart-container">
+    chart: {{data}}
+  </div>
+</div>
+<div style="height: 45px"></div>
+
+<!-- <footer class="page-footer fixed-bottom bg-primary p-2"> -->
+<footer class="page-footer bg-primary p-2">
+
+  <div class="d-flex justify-content-between align-items-center">
+    <div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center">© 2020 Copyright:
+      <a href="" class="text-dark"> NECTEC </a>
+    </div>
+
+    <div>
+      <button class="btn btn-warning" @click="fn.measurePage()" style="width: 44px">
+        <i class="fas fa-file-alt"></i>
+      </button>
+      <button class="btn btn-warning" @click="fn.homePage()">
+        <i class="fas fa-home"></i>
+      </button>
+    </div>
+  </div>
+</footer>
