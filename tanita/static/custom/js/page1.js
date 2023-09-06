@@ -17,11 +17,13 @@ export default class Page1 {
       this.default = {};
       this.default.barcode = ``,
       this.default.form = {
+        "name": `Anonymous`,
         "gender": `male`,
         "bodytype": `standard`,
         "clothWeight": "0.5",
         "termOfService": false,
-        "id": window.crypto.getRandomValues(new Uint32Array(1))[0]
+        // "id": window.crypto.getRandomValues(new Uint32Array(1))[0]
+        "id": ``
 
         // "id": window.crypto.getRandomValues(new Uint32Array(1))[0],
         // "gender": "male",
