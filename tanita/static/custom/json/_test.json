@@ -4,7 +4,13 @@
     "primaryIndex": "gender",
     "secondaryIndex": "age",
     "tertiaryIndex": "valuePercent",
-    "desirableVal": "Healthy"
+    "desirableVal": "Healthy",
+    "valueDefinition": {
+      "Underfat": { "color": "#176b78" },
+      "Healthy": { "color": "#d2de32" },
+      "Overfat": { "color": "#e25e3e" },
+      "Obese": { "color": "#952323" }
+    }
   },
   "list": [
     {
@@ -936,7 +942,7 @@
               "value": "Overfat"
             },
             {
-              "index": 37,
+              "index": 35,
               "value": "Overfat"
             },
             {

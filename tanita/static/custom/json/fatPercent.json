@@ -6,10 +6,10 @@
     "tertiaryIndex": "valuePercent",
     "desirableVal": "Healthy",
     "valueDefinition": {
-      "Underfat": { "color": "#ffff00" },
-      "Healthy": { "color": "#ffff00" },
-      "Overfat": { "color": "#ffff00" },
-      "Obese": { "color": "#ffff00" }
+      "Underfat": { "color": "#176b78" },
+      "Healthy": { "color": "#d2de32" },
+      "Overfat": { "color": "#e25e3e" },
+      "Obese": { "color": "#952323" }
     }
   },
   "list": [

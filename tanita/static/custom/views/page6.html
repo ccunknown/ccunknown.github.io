@@ -1,15 +1,65 @@
 <div class="page6-container">
   <!-- File Panel -->
   <div class="page6-files-container">
-    <div v-for="item in fileList">
-      <span @click="fn.translate(item)">
+    <div
+      v-for="item in fileList"
+      class="page6-file-item"
+      @click="fn.translate(item)"
+    >
+      <span>
         {{item}}
       </span>
     </div>
   </div>
   <!-- Chart -->
-  <div class="page6-chart-container">
-    chart: {{data}}
+  <div v-if="Object.keys(data).length" class="page6-chart-container">
+    <div class="page5-chart-y-label">
+      <span class="page6-label">File: </span>
+      <span>{{file}}</span>
+    </div>
+    <div v-for="i in data.protoArray[0]" class=" d-flex flex-column gap-1px" style="height: fit-content;">
+      <div class="d-flex flex-column">
+        <div>
+          <span class="page6-label">{{definition.metadata.primaryIndex}}: {{i}}</span>
+        </div>
+        <div class="d-flex flex-row">
+          <div class="page6-chart-y-label">
+            <span class="page6-label">{{definition.metadata.secondaryIndex}}</span>
+          </div>
+          <div class="d-flex flex-column gap-1px">
+            <div v-for="(j, ji) in data.protoArray[1]" class="d-flex flex-row gap-1px">
+              <div class="page6-chart-y-scale">
+                {{j}}
+              </div>
+              <div
+                v-for="k in data.protoArray[2]"
+                :style="`
+                  width: 15px;
+                  height: 15px;
+                  background-color: ${fn.getColor([i, j, k])};
+                `"
+                :title="`${definition.metadata.primaryIndex}:${i}, ${definition.metadata.secondaryIndex}:${j}, ${definition.metadata.tertiaryIndex}:${k}`"
+              >
+              </div>
+            </div>
+            <div class="d-flex flex-row gap-1px">
+              <div class="page6-chart-y-scale"></div>
+              <div
+                v-for="k in data.protoArray[2]"
+              >
+                <div class="page6-chart-x-scale">
+                  {{k}}
+                </div>
+              </div>
+            </div>
+            <div class="page6-chart-x-label">
+              <span class="page6-label">{{definition.metadata.tertiaryIndex}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- chart: {{data}} -->
   </div>
 </div>
 <div style="height: 45px"></div>
@@ -36,3 +86,17 @@
     </div>
   </div>
 </footer>
+
+<!-- Uploading overlay -->
+<div class="overlay-backdrop" :class="{ 'd-none': !loading }">
+  <div class="overlay-progress-box">
+    <div
+      class="
+        progress-bar progress-bar-black-striped bg-warning progress-bar-animated
+        overlay-progress-bar
+      "
+    >
+    </div>
+    <span class="overlay-progress-text">Loading</span>
+  </div>
+</div>

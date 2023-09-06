@@ -4,7 +4,14 @@
     "primaryIndex": "gender",
     "secondaryIndex": "height",
     "tertiaryIndex": "weight",
-    "desirableVal": "Healthy"
+    "desirableVal": "Healthy",
+    "valueDefinition": {
+      "Underweight": { "color": "#176b78" },
+      "Healthy": { "color": "#a2c579" },
+      "Overweight": { "color": "#d2de32" },
+      "Obese": { "color": "#FF9B50" },
+      "Extreamly Obese": { "color": "#952323" }
+    }
   },
   "list": [
     {
@@ -35,7 +42,7 @@
             },
             {
               "index": 93.2,
-              "value": "Extreamly obese"
+              "value": "Extreamly Obese"
             }
           ]
         },
@@ -493,7 +500,7 @@
             },
             {
               "index": 93.2,
-              "value": "Extreamly obese"
+              "value": "Extreamly Obese"
             }
           ]
         },
