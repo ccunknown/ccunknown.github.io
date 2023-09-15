@@ -36,6 +36,11 @@
   --tanita-light-yellow: rgb(254, 243, 164);
   --tanita-light-red: rgb(251, 204, 188);
   --tanita-light-gray: rgb(233, 233, 233);
+
+  --physique-rating-offset-x: 220px;
+  --physique-rating-multiple-x: 30.5px;
+  --physique-rating-offset-y: 147px;
+  --physique-rating-multiple-y: 18px;
 }
 
 .auto-loading {

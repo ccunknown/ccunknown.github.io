@@ -1,4 +1,18 @@
 {
+  "metadata": {
+    "description": "",
+    "primaryIndex": "gender",
+    "secondaryIndex": "height",
+    "tertiaryIndex": "weight",
+    "desirableVal": "Healthy",
+    "valueDefinition": {
+      "Underweight": { "color": "#176b78" },
+      "Healthy": { "color": "#a2c579" },
+      "Overweight": { "color": "#d2de32" },
+      "Obese": { "color": "#FF9B50" },
+      "Extreamly Obese": { "color": "#952323" }
+    }
+  },
   "list": [
     {
       "index": 1,
@@ -15,8 +29,20 @@
               "value": "Overweight"
             },
             {
+              "index": 68.2,
+              "value": "Overweight"
+            },
+            {
               "index": 70.5,
               "value": "Obese"
+            },
+            {
+              "index": 90.9,
+              "value": "Obese"
+            },
+            {
+              "index": 93.2,
+              "value": "Extreamly Obese"
             }
           ]
         },
@@ -28,12 +54,24 @@
               "value": "Healthy"
             },
             {
+              "index": 61.4,
+              "value": "Healthy"
+            },
+            {
               "index": 70.5,
               "value": "Overweight"
             },
             {
               "index": 72.7,
               "value": "Obese"
+            },
+            {
+              "index": 95.9,
+              "value": "Obese"
+            },
+            {
+              "index": 97.7,
+              "value": "Extreamly Obese"
             }
           ]
         },
@@ -45,8 +83,16 @@
               "value": "Underweight"
             },
             {
+              "index": 47.7,
+              "value": "Healthy"
+            },
+            {
               "index": 61.4,
               "value": "Healthy"
+            },
+            {
+              "index": 63.6,
+              "value": "Overweight"
             },
             {
               "index": 72.7,
@@ -66,8 +112,16 @@
               "value": "Underweight"
             },
             {
+              "index": 47.7,
+              "value": "Healthy"
+            },
+            {
               "index": 63.6,
               "value": "Healthy"
+            },
+            {
+              "index": 65.9,
+              "value": "Overweight"
             },
             {
               "index": 75.0,
@@ -87,8 +141,16 @@
               "value": "Underweight"
             },
             {
+              "index": 50.0,
+              "value": "Healthy"
+            },
+            {
               "index": 65.9,
               "value": "Healthy"
+            },
+            {
+              "index": 68.2,
+              "value": "Overweight"
             },
             {
               "index": 77.3,
@@ -108,8 +170,16 @@
               "value": "Underweight"
             },
             {
+              "index": 52.3,
+              "value": "Healthy"
+            },
+            {
               "index": 65.9,
               "value": "Healthy"
+            },
+            {
+              "index": 68.2,
+              "value": "Overweight"
             },
             {
               "index": 79.5,
@@ -129,8 +199,16 @@
               "value": "Underweight"
             },
             {
+              "index": 52.3,
+              "value": "Healthy"
+            },
+            {
               "index": 68.2,
               "value": "Healthy"
+            },
+            {
+              "index": 70.5,
+              "value": "Overweight"
             },
             {
               "index": 84.1,
@@ -150,8 +228,16 @@
               "value": "Underweight"
             },
             {
+              "index": 54.5,
+              "value": "Healthy"
+            },
+            {
               "index": 70.5,
               "value": "Healthy"
+            },
+            {
+              "index": 72.7,
+              "value": "Overweight"
             },
             {
               "index": 86.4,
@@ -171,8 +257,16 @@
               "value": "Underweight"
             },
             {
+              "index": 56.8,
+              "value": "Healthy"
+            },
+            {
               "index": 72.7,
               "value": "Healthy"
+            },
+            {
+              "index": 75.0,
+              "value": "Overweight"
             },
             {
               "index": 88.6,
@@ -192,8 +286,16 @@
               "value": "Underweight"
             },
             {
+              "index": 56.8,
+              "value": "Healthy"
+            },
+            {
               "index": 75.0,
               "value": "Healthy"
+            },
+            {
+              "index": 77.3,
+              "value": "Overweight"
             },
             {
               "index": 90.9,
@@ -213,8 +315,16 @@
               "value": "Underweight"
             },
             {
+              "index": 59.1,
+              "value": "Healthy"
+            },
+            {
               "index": 77.3,
               "value": "Healthy"
+            },
+            {
+              "index": 79.5,
+              "value": "Overweight"
             },
             {
               "index": 93.2,
@@ -234,8 +344,16 @@
               "value": "Underweight"
             },
             {
+              "index": 61.4,
+              "value": "Healthy"
+            },
+            {
               "index": 79.5,
               "value": "Healthy"
+            },
+            {
+              "index": 81.8,
+              "value": "Overweight"
             },
             {
               "index": 95.5,
@@ -255,11 +373,14 @@
               "value": "Underweight"
             },
             {
+              "index": 63.6,
+              "value": "Healthy"
+            },
+            {
               "index": 81.8,
               "value": "Healthy"
             },
             {
-              "__comment__": "",
               "index": 84.1,
               "value": "Overweight"
             }
@@ -271,6 +392,10 @@
             {
               "index": 61.4,
               "value": "Underweight"
+            },
+            {
+              "index": 63.6,
+              "value": "Healthy"
             },
             {
               "index": 84.1,
@@ -290,6 +415,10 @@
               "value": "Underweight"
             },
             {
+              "index": 65.9,
+              "value": "Healthy"
+            },
+            {
               "index": 86.4,
               "value": "Healthy"
             },
@@ -307,6 +436,10 @@
               "value": "Underweight"
             },
             {
+              "index": 68.2,
+              "value": "Healthy"
+            },
+            {
               "index": 88.6,
               "value": "Healthy"
             },
@@ -322,6 +455,10 @@
             {
               "index": 68.2,
               "value": "Underweight"
+            },
+            {
+              "index": 70.5,
+              "value": "Healthy"
             },
             {
               "index": 90.9,
@@ -350,8 +487,20 @@
               "value": "Overweight"
             },
             {
+              "index": 68.2,
+              "value": "Overweight"
+            },
+            {
               "index": 70.5,
               "value": "Obese"
+            },
+            {
+              "index": 90.9,
+              "value": "Obese"
+            },
+            {
+              "index": 93.2,
+              "value": "Extreamly Obese"
             }
           ]
         },
@@ -363,12 +512,24 @@
               "value": "Healthy"
             },
             {
+              "index": 61.4,
+              "value": "Healthy"
+            },
+            {
               "index": 70.5,
               "value": "Overweight"
             },
             {
               "index": 72.7,
               "value": "Obese"
+            },
+            {
+              "index": 95.9,
+              "value": "Obese"
+            },
+            {
+              "index": 97.7,
+              "value": "Extreamly Obese"
             }
           ]
         },
@@ -380,8 +541,16 @@
               "value": "Underweight"
             },
             {
+              "index": 47.7,
+              "value": "Healthy"
+            },
+            {
               "index": 61.4,
               "value": "Healthy"
+            },
+            {
+              "index": 63.6,
+              "value": "Overweight"
             },
             {
               "index": 72.7,
@@ -401,8 +570,16 @@
               "value": "Underweight"
             },
             {
+              "index": 47.7,
+              "value": "Healthy"
+            },
+            {
               "index": 63.6,
               "value": "Healthy"
+            },
+            {
+              "index": 65.9,
+              "value": "Overweight"
             },
             {
               "index": 75.0,
@@ -422,8 +599,16 @@
               "value": "Underweight"
             },
             {
+              "index": 50.0,
+              "value": "Healthy"
+            },
+            {
               "index": 65.9,
               "value": "Healthy"
+            },
+            {
+              "index": 68.2,
+              "value": "Overweight"
             },
             {
               "index": 77.3,
@@ -443,8 +628,16 @@
               "value": "Underweight"
             },
             {
+              "index": 52.3,
+              "value": "Healthy"
+            },
+            {
               "index": 65.9,
               "value": "Healthy"
+            },
+            {
+              "index": 68.2,
+              "value": "Overweight"
             },
             {
               "index": 79.5,
@@ -464,8 +657,16 @@
               "value": "Underweight"
             },
             {
+              "index": 52.3,
+              "value": "Healthy"
+            },
+            {
               "index": 68.2,
               "value": "Healthy"
+            },
+            {
+              "index": 70.5,
+              "value": "Overweight"
             },
             {
               "index": 84.1,
@@ -485,8 +686,16 @@
               "value": "Underweight"
             },
             {
+              "index": 54.5,
+              "value": "Healthy"
+            },
+            {
               "index": 70.5,
               "value": "Healthy"
+            },
+            {
+              "index": 72.7,
+              "value": "Overweight"
             },
             {
               "index": 86.4,
@@ -506,8 +715,16 @@
               "value": "Underweight"
             },
             {
+              "index": 56.8,
+              "value": "Healthy"
+            },
+            {
               "index": 72.7,
               "value": "Healthy"
+            },
+            {
+              "index": 75.0,
+              "value": "Overweight"
             },
             {
               "index": 88.6,
@@ -527,8 +744,16 @@
               "value": "Underweight"
             },
             {
+              "index": 56.8,
+              "value": "Healthy"
+            },
+            {
               "index": 75.0,
               "value": "Healthy"
+            },
+            {
+              "index": 77.3,
+              "value": "Overweight"
             },
             {
               "index": 90.9,
@@ -548,8 +773,16 @@
               "value": "Underweight"
             },
             {
+              "index": 59.1,
+              "value": "Healthy"
+            },
+            {
               "index": 77.3,
               "value": "Healthy"
+            },
+            {
+              "index": 79.5,
+              "value": "Overweight"
             },
             {
               "index": 93.2,
@@ -569,8 +802,16 @@
               "value": "Underweight"
             },
             {
+              "index": 61.4,
+              "value": "Healthy"
+            },
+            {
               "index": 79.5,
               "value": "Healthy"
+            },
+            {
+              "index": 81.8,
+              "value": "Overweight"
             },
             {
               "index": 95.5,
@@ -590,11 +831,14 @@
               "value": "Underweight"
             },
             {
+              "index": 63.6,
+              "value": "Healthy"
+            },
+            {
               "index": 81.8,
               "value": "Healthy"
             },
             {
-              "__comment__": "",
               "index": 84.1,
               "value": "Overweight"
             }
@@ -606,6 +850,10 @@
             {
               "index": 61.4,
               "value": "Underweight"
+            },
+            {
+              "index": 63.6,
+              "value": "Healthy"
             },
             {
               "index": 84.1,
@@ -625,6 +873,10 @@
               "value": "Underweight"
             },
             {
+              "index": 65.9,
+              "value": "Healthy"
+            },
+            {
               "index": 86.4,
               "value": "Healthy"
             },
@@ -642,6 +894,10 @@
               "value": "Underweight"
             },
             {
+              "index": 68.2,
+              "value": "Healthy"
+            },
+            {
               "index": 88.6,
               "value": "Healthy"
             },
@@ -657,6 +913,10 @@
             {
               "index": 68.2,
               "value": "Underweight"
+            },
+            {
+              "index": 70.5,
+              "value": "Healthy"
             },
             {
               "index": 90.9,

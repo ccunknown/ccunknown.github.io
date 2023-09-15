@@ -79,6 +79,8 @@ class Controller {
       "id": false,
       "barcode": false,
       "uploadpdf": false,
+      "wsCheckPeriod": 5000,
+      "wsCheckTimeout": 2000,
       "flags": ``,
     };
   }

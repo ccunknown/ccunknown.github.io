@@ -133,6 +133,22 @@
             alt="dashboard_detail"
             height="300px"
           >
+          <div
+            :class="`
+              tanita-chart-physique-rating-dot
+              tanita-chart-physique-rating-x-${evaluate.physiqueRating.x}
+              tanita-chart-physique-rating-y-${evaluate.physiqueRating.y}
+            `"
+          >
+          </div>
+          <!-- <div
+            :class="`
+              tanita-chart-physique-rating-dot
+              tanita-chart-physique-rating-x--4
+              tanita-chart-physique-rating-y-5
+            `"
+          >
+          </div> -->
         </div>
       </div>
     </div>

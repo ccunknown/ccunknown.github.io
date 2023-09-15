@@ -194,6 +194,62 @@
     height: 300px;
 }
 
+.tanita-chart-physique-rating-dot {
+    /* position: absolute; */
+    height: 20px;
+    width: 20px;
+    background-color: #555555;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.tanita-chart-physique-rating-x--4 {
+    left: calc(var(--physique-rating-offset-x) + (-4 * var(--physique-rating-multiple-x)));
+}
+.tanita-chart-physique-rating-x--3 {
+    left: calc(var(--physique-rating-offset-x) + (-3 * var(--physique-rating-multiple-x)));
+}
+.tanita-chart-physique-rating-x--2 {
+    left: calc(var(--physique-rating-offset-x) + (-2 * var(--physique-rating-multiple-x)));
+}
+.tanita-chart-physique-rating-x--1 {
+    left: calc(var(--physique-rating-offset-x) + (-1 * var(--physique-rating-multiple-x)));
+}
+.tanita-chart-physique-rating-x-0 {
+    left: calc(var(--physique-rating-offset-x));
+}
+.tanita-chart-physique-rating-x-1 {
+    left: calc(var(--physique-rating-offset-x) + (1 * var(--physique-rating-multiple-x)));
+}
+.tanita-chart-physique-rating-x-2 {
+    left: calc(var(--physique-rating-offset-x) + (2 * var(--physique-rating-multiple-x)));
+}
+.tanita-chart-physique-rating-x-3 {
+    left: calc(var(--physique-rating-offset-x) + (3 * var(--physique-rating-multiple-x)));
+}
+.tanita-chart-physique-rating-x-4 {
+    left: calc(var(--physique-rating-offset-x) + (4 * var(--physique-rating-multiple-x)));
+}
+
+.tanita-chart-physique-rating-y--3 {
+    bottom: calc(var(--physique-rating-offset-y) + (-3 * var(--physique-rating-multiple-y)));
+}
+.tanita-chart-physique-rating-y--1 {
+    bottom: calc(var(--physique-rating-offset-y) + (-1 * var(--physique-rating-multiple-y)));
+}
+.tanita-chart-physique-rating-y-0 {
+    bottom: calc(var(--physique-rating-offset-y));
+}
+.tanita-chart-physique-rating-y-1 {
+    bottom: calc(var(--physique-rating-offset-y) + (1 * var(--physique-rating-multiple-y)));
+}
+.tanita-chart-physique-rating-y-3 {
+    bottom: calc(var(--physique-rating-offset-y) + (3 * var(--physique-rating-multiple-y)));
+}
+.tanita-chart-physique-rating-y-5 {
+    bottom: calc(var(--physique-rating-offset-y) + (5 * var(--physique-rating-multiple-y)));
+}
+
 /*** Tanita TBW ***/
 .tanita-chart-tbw-svg {
     height: 60px;

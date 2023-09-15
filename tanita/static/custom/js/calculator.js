@@ -91,6 +91,23 @@ export default class Calculator {
     });
   }
 
+  fatPercentScoreCal(gender, age, fatPercent) {
+    console.log(`Calculator: fatPercentScoreCal(${gender}, ${age}, ${fatPercent}) >> `);
+    return new Promise(async (resolve, reject) => {
+      let define;
+      Promise.resolve()
+        .then(() => this.loadJson(`static/custom/json/fatPercent.json`))
+        .then((def) => define = def)
+        .then(() => this.fatPercentCal(gender, age, fatPercent))
+        .then((res) => {
+          const score = define.metadata.valueDefinition[res.result.value].score;
+          return score;
+        })
+        .then((res) => resolve(res))
+        .catch((err) => reject(err));
+    });
+  }
+
   muscleMassCal(gender, age, muscleMass) {
     console.log(`Calculator: fatPercentCal(${gender}, ${age}, ${fatPercent}) >> `);
     return new Promise(async (resolve, reject) => {

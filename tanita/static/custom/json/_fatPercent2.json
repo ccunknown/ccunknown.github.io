@@ -6,11 +6,11 @@
     "tertiaryIndex": "valuePercent",
     "desirableVal": "Standard Plus",
     "valueDefinition": {
-      "Underfat": { "color": "#009FE3", "score": -3 },
-      "Standard Minus": { "color": "#009C3D", "score": -1 },
-      "Standard Plus": { "color": "#98C21D", "score": 1 },
-      "Overfat": { "color": "#FECA00", "score": 3 },
-      "Obese": { "color": "#ED682F", "score": 5 }
+      "Underfat": { "color": "#009FE3" },
+      "Standard Minus": { "color": "#009C3D" },
+      "Standard Plus": { "color": "#98C21D" },
+      "Overfat": { "color": "#FECA00" },
+      "Obese": { "color": "#ED682F" }
     }
   },
   "list": [

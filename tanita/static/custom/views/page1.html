@@ -74,6 +74,18 @@
     </div>
   </div>
 
+  <!-- Websocket Status -->
+  <div
+    v-if="!wsStatus"
+    class="
+      w-100 p-2
+      d-flex flex-row justify-content-end
+      text-danger font-weight-bold
+    "
+  >
+    Web Socket connection failure. Try refresh web browser.
+  </div>
+
   <div v-if="state=='sending'" class="form-container round-corner p-5">
     <div class="progress">
       <div class="progress-bar progress-bar-black-striped bg-warning progress-bar-animated w-100">

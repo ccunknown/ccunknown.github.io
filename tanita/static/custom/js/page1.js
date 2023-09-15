@@ -7,6 +7,8 @@ export default class Page1 {
   init() {
     return new Promise(async (resolve, reject) => {
       await this.initVue();
+      this.vue.wsStatus = this.controller.websocket.ready;
+      this.controller.websocket.addListener(this.onWsStatusChange.bind(this))
       console.log(`Page1 init() complete.`);
       resolve();
     });
@@ -23,7 +25,7 @@ export default class Page1 {
         "clothWeight": "0.5",
         "termOfService": false,
         // "id": window.crypto.getRandomValues(new Uint32Array(1))[0]
-        "id": ``
+        "id": ``,
 
         // "id": window.crypto.getRandomValues(new Uint32Array(1))[0],
         // "gender": "male",
@@ -48,6 +50,7 @@ export default class Page1 {
           "barcodeActive": this.controller.params.barcode,
           "barcodeData": ``,
           "barcodeError": ``,
+          "wsStatus": false,
           "form": {},
           "resource": {}
         },
@@ -195,9 +198,14 @@ export default class Page1 {
     this.websocket.onMessage = this.onMessage.bind(this);
   }
 
+  onWsStatusChange(status) {
+    console.log(`ws status change: `, status);
+    this.vue.wsStatus = status;
+  }
+
   onMessage(event) {
     console.log(`Page1: onMessage() >> `);
-    console.log(event);
+    console.log(`ws: `, event);
 
     return new Promise(async (resolve, reject) => {
       if(event.type == `message` && event.data) {

@@ -153,10 +153,18 @@ export default class Page5 {
       // evaluate.vfr = await this.calculator.vfrCal(this.vue.measure.vfr.value);
       // evaluate.bmr = await this.calculator.bmrCal(this.vue.measure.bmrKCal.value);
       evaluate.bmi = await this.calculator.bmiCal(this.vue.measure.bmi.value);
+      evaluate.physiqueRating = {
+        x: measure[`Muscle score`].value,
+        y: await this.calculator.fatPercentScoreCal(
+          this.vue.measure.gender.value,
+          this.vue.measure.age.value,
+          this.vue.measure.fatPercent.value
+        ),
+      };
       // evaluate.ecwPercent = await this.calculator.ecwPercentCal(this.vue.measure.ecwPercent.value);
 
       this.vue.evaluate = evaluate;
-      console.log(`evalueate: `, this.vue.evaluate);
+      console.log(`evaluate: `, this.vue.evaluate);
 
       resolve();
     });
@@ -203,7 +211,6 @@ export default class Page5 {
     uploadJson = this.controller.params.uploadjson,
   ) {
     console.log(`upload(pdf:${uploadPdf},json:${uploadJson})`);
-    this.translate();
     if (!uploadPdf && !uploadJson)
       return Promise.resolve();
     let pdfBlob = null;
@@ -214,6 +221,7 @@ export default class Page5 {
         .then(() => this.vue.uploading = true)
         // .then(() => $(document).ready)
         // .then(() => this.wait(3))
+        .then(() => this.translate())
         .then(() => uploadPdf ? this.craftBlobPdf() : null)
         .then((blob) => pdfBlob = blob)
         .then(() => uploadJson ? this.craftBlobJson() : null)
